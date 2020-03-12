@@ -1,0 +1,87 @@
+
+@mixin container {
+    width: 100%;
+    padding-right: ($grid-gutters/2);
+    padding-left: ($grid-gutters/2);
+    margin-right: auto;
+    margin-left: auto;
+    
+    @each $media,$width in $container-width {
+        @include media-min($width) {
+            max-width: $width - ($grid-gutters*2);
+            @content;
+        }
+    }
+}
+@mixin container-set($grid , $media-width) {
+    width: 100%;
+    padding-right: $grid;
+    padding-left: $grid;
+    margin-right: auto;
+    margin-left: auto;
+    
+    @each $media,$width in $container-width {
+        @include media-min($width) {
+            @if($media-width >= $width){ 
+                max-width: $width - ($grid*4);
+                @content;
+            }
+        }
+    }
+}
+
+@mixin row {
+    margin-left: -($grid-gutters/2);
+    margin-right: -($grid-gutters/2);
+    display: flex;
+    flex-wrap: wrap;
+}
+@mixin row-set($grid) {
+    margin-left: -($grid);
+    margin-right: -($grid);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin col ($col) {
+    padding-left: ($grid-gutters/2);
+    padding-right: ($grid-gutters/2);
+    flex-basis: $col;
+    max-width: $col;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+@mixin col-set ($col,$grid) {
+    padding-left: $grid;
+    padding-right: $grid;
+    flex-basis: $col;
+    max-width: $col;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+@mixin row-float {
+    margin-left: -($grid-gutters/2);
+    margin-right: -($grid-gutters/2);
+    overflow: hidden;
+}
+@mixin row-float-set($grid) {
+    margin-left: -($grid);
+    margin-right: -($grid);
+    overflow: hidden;
+}
+
+@mixin col-float ($col) {
+    padding-left: ($grid-gutters/2);
+    padding-right: ($grid-gutters/2);
+    max-width: $col;
+    width: 100%;
+    float: left;
+}
+@mixin col-float-set ($col,$grid) {
+    padding-left: $grid;
+    padding-right: $grid;
+    max-width: $col;
+    width: 100%;
+    float: left;
+}

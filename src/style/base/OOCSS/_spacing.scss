@@ -1,0 +1,17 @@
+@mixin py ($spacing) {
+    padding-top: $spacing;
+    padding-bottom: $spacing;
+}
+@mixin px ($spacing) {
+    padding-left: $spacing;
+    padding-right: $spacing;
+}
+
+@mixin my ($spacing) {
+    margin-top: $spacing;
+    margin-bottom: $spacing;
+}
+@mixin mx ($spacing) {
+    margin-left: $spacing;
+    margin-right: $spacing;
+}

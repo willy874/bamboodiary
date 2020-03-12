@@ -1,0 +1,62 @@
+//display
+// @each $name,$size in $FontSize-display-1 {
+//     @include media-min(map-get($mediaSize-MP, $name)){
+//         .display-1{
+//             --font-size: #{$size};
+//             --line-height: #{$size * 1.5};
+//             line-height: 1.5;
+//             font-size: $size;
+//         } 
+//     }  
+// }
+// @each $name,$size in $FontSize-display-2 {
+//     @include media-min(map-get($mediaSize-MP, $name)){
+//         .display-2{
+//             --font-size: #{$size};
+//             --line-height: #{$size * 1.5};
+//             line-height: 1.5;
+//             font-size: $size;
+//         } 
+//     }  
+// }
+// @each $name,$size in $FontSize-display-3 {
+//     @include media-min(map-get($mediaSize-MP, $name)){
+//         .display-3{
+//             --font-size: #{$size};
+//             --line-height: #{$size * 1.5};
+//             line-height: 1.5;
+//             font-size: $size;
+//         } 
+//     }  
+// }
+// @each $name,$size in $FontSize-display-4 {
+//     @include media-min(map-get($mediaSize-MP, $name)){
+//         .display-4{
+//             --font-size: #{$size};
+//             --line-height: #{$size * 1.5};
+//             line-height: 1.5;
+//             font-size: $size;
+//         } 
+//     }  
+// }
+// @each $name,$size in $FontSize-display-5 {
+//     @include media-min(map-get($mediaSize-MP, $name)){
+//         .display-5{
+//             --font-size: #{$size};
+//             --line-height: #{$size * 1.5};
+//             line-height: 1.5;
+//             font-size: $size;
+//         } 
+//     }  
+// }
+
+@mixin display-font($i) {
+    @each $name,$size in map-get($FontSize-display, $i) {
+        @include media-min(map-get($mediaSize-MP, $name)){
+            --font-size: #{$size};
+            --line-height: #{$size * 1.5};
+            line-height: 1.5;
+            font-size: $size;
+        } 
+    }
+}

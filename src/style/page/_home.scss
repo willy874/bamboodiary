@@ -1,0 +1,110 @@
+.home{
+    .sec1{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2{
+            span{
+                @include display-font(3);
+                letter-spacing: 0.25rem;
+                font-weight: bold;
+                text-shadow: 0 0 0.5rem rgba(0, 0, 0,0.8);
+            }
+        }
+    }
+    .sec2{
+        width: 100%;
+        @include container;
+        &#{-heading}{
+            position: relative;
+            text-align: center;
+            padding-bottom: 1.5rem;
+            .h2-en{     
+                font-size: 6rem;
+                font-weight: bold;
+                letter-spacing: 0.5rem;
+                color: #3a3;
+                text-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0,0.8);
+            }
+            .h2-ch{
+                @include display-font(2);
+                font-weight: bold;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                padding-top: 4rem;
+                letter-spacing: 0.25rem;
+                text-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0,0.8);
+            }
+        }
+        &#{-row}{
+            @include row;
+            background-color: rgba(0, 0, 0, 0);
+
+            &#{-col}{
+                
+                
+                h3{
+                    font-weight: bold;
+                    letter-spacing: 0.125rem;
+                }
+
+                p{
+                    padding: 1rem 0;
+                }
+
+                &#{-btn}{
+                    text-align: right;
+                    
+                    
+                    button{
+                        border: solid 0.0625rem #fff;
+                        background-color: transparent;
+                        font-size: 1rem;
+                        padding: 0.25rem 1.5rem;
+                        border-radius: 0.25rem;
+                        color: #fff;
+                        font-weight: bold;
+                        transition: all 0.2s;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #fff;
+                            color: #000;
+                        }
+                        &:focus {
+                            background-color: #fff;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+
+            .img-block{
+                @include col(40%);
+            }
+            .text-block{
+                @include col(60%);
+            }
+        }
+    }
+    .sec3{
+        background-color: rgb(31, 110, 0);
+        width: 100%;
+        height: 60rem;
+        h2{
+            span{
+                letter-spacing: 0.25rem;
+                font-weight: bold;
+                text-shadow: 0 0 0.5rem rgba(0, 0, 0,0.8);
+            }
+        }
+    }
+
+
+
+}
+

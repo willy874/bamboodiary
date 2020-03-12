@@ -1,0 +1,80 @@
+//**********
+// @media **
+//**********
+
+@mixin media-min($media) {
+    @media (min-width: $media) {
+        @content;
+    }
+}
+
+@mixin media-max($media) {
+    @media (max-width: $media) {
+        @content;
+    }
+}
+
+@mixin media-Range($minMedia, $maxMedia) {
+    @media (min-width:$minMedia) and (max-width:$maxMedia) {
+        @content;
+    }
+}
+
+
+@import 'OOCSS/grid';
+@import 'OOCSS/spacing';
+@import 'OOCSS/root';
+@import 'OOCSS/display-font';
+
+
+@mixin stretched-link-div {
+    position: relative;
+
+    button,a {
+        &::after{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: auto;
+        content: "";
+        background-color: rgba(0, 0, 0, 0);
+        }
+    }
+}
+
+@mixin stretched-link-btn {
+    &::after{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: auto;
+        content: "";
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+         
+@mixin text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    span,a{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+
+@mixin overline ($fs,$line){
+    height: $fs * $line;
+    line-height: $fs * $line;
+    font-size: $fs;
+    overflow: hidden;
+}
+
+
