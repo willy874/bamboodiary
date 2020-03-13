@@ -1,5 +1,6 @@
 import m from 'mithril'
 import classNames from 'classnames'
+import TabNavbar from '../component/tab-navbar'
 
 export default class Home {
     constructor(vnode){
@@ -31,24 +32,36 @@ export default class Home {
                             src: './images/about/Self-portrait-01.jpg',
                             alt: '竹子照片',
                             style: {
-                                width: '100%',
-                                borderRadius: '0.5rem'
+                                width: '100%'
                             }
                         })
                     ]),
                     m('div',{
                         class: classNames('sec2-row-col','text-block')
                     },[
-                        m('h3','個人資訊'),
-                        m('p',[
-                            m('ul',[
-                                m('li','專長： 電機維修、監控系統、影音剪輯、前端工程'),
-                                m('li','興趣： 旅遊拍照、寫作、閱讀、寫程式、交流趣聞')
-                            ])
-                        ]),
+                        m(TabNavbar,{
+                            options: [{
+                                title: m('h3','個人資訊'),
+                                panel: m('div',[
+                                    m('p',[
+                                        m('ul',[
+                                            m('li','專長： 電機維修、監控系統、影音剪輯、前端工程'),
+                                            m('li','興趣： 旅遊拍照、寫作、閱讀、寫程式、交流趣聞')
+                                        ])
+                                    ])
+                                ])
+                            },{
+                                title: m('h3','隨筆雜談'),
+                                panel: m('div',[
+                                    m('p',`一開始基於興趣開始學習架站，本身是機電工程的我跨領域學習前端開發，嘗試各種不同的語言和套件。然而，對於一個的工程師，不外乎最痛苦的就是資源匱乏。 前端最大的優點就是"看的到"，馬上就能知道結果。一路沒有任何幫助到真正進職場就業能讓前輩引導也是熬了許久。 0到1是最為困難的，只能仰賴大量的嘗試與練習，直到熟手並掌握。因而，找尋"解決問題"的方法尤為重要，或許也是因為這樣，獨創不少個人手法和道路。`),
+                                    
+                                ])
+                            }]
+                        }),
                         m('.sec2-row-col-btn',[
                             m('button[type=button]','MORE')
                         ])
+                        
                     ])
                 ])
             ]),

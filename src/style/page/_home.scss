@@ -45,20 +45,27 @@
             background-color: rgba(0, 0, 0, 0);
 
             &#{-col}{
+                display: flex;
+                flex-direction: column;
                 
-                
+                .tab-link {
+                }
                 h3{
                     font-weight: bold;
                     letter-spacing: 0.125rem;
                 }
 
+                .tab-navbar{
+                    flex-grow: 1;
+                }
+
                 p{
                     padding: 1rem 0;
                 }
+                
 
                 &#{-btn}{
                     text-align: right;
-                    
                     
                     button{
                         border: solid 0.0625rem #fff;
@@ -85,9 +92,15 @@
 
             .img-block{
                 @include col(40%);
+                img{
+                    border-radius: 1rem;
+                }
             }
             .text-block{
                 @include col(60%);
+                background-color: #007700aa;
+                border-radius: 1rem;
+                padding: 1rem;
             }
         }
     }

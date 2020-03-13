@@ -1,0 +1,53 @@
+.tab-navbar {
+    display: flex;
+    flex-direction: column;
+    .tab-nav{
+        display: flex;
+        margin: 0 -1rem;
+        .tab-link{
+            padding: 0 1rem;
+            margin-bottom: 0.1rem;
+            position: relative;
+            &::after{
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                pointer-events: auto;
+                content: "";
+                background-color: rgba(0, 0, 0, 0);
+            }
+        }
+    }
+    .tab-content{
+        position: relative;
+        flex-grow: 1;
+
+        .tab-panel{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+    &.fade{
+        .tab-panel{
+            animation: fadeIn 1s ease;
+        }
+        .tab-panel.remove-animation{
+            animation: fadeOut 1s ease;
+        }
+    }
+}
+
+@keyframes fadeIn{
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@keyframes fadeOut{
+    from {opacity:1;}
+    to {opacity:0;}
+}
