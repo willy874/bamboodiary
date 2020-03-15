@@ -1,5 +1,6 @@
 export default class Model {
-    constructor(){
-        
+    constructor() {
+        //作品集
+        this.portfolio = []
     }
 }

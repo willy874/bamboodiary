@@ -4,10 +4,22 @@
     .tab-nav{
         display: flex;
         margin: 0 -1rem;
-        .tab-link{
-            padding: 0 1rem;
-            margin-bottom: 0.1rem;
-            position: relative;
+    }
+    .tab-item{
+        padding: 0 1rem;
+        margin-bottom: 0.1rem;
+    }
+    .tab-link{
+        position: relative;
+        padding: 0.25rem 0.5rem;
+        border: 0.0625rem solid #fff;
+        border-radius: 0.25rem;
+        transition: all 0.3s;
+        a{
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: bold;
+            transition: all 0.3s;
             &::after{
                 position: absolute;
                 top: 0;
@@ -20,18 +32,40 @@
                 background-color: rgba(0, 0, 0, 0);
             }
         }
+        &.active{
+            background-color: #fff;
+            a{
+                color: #000;
+            }
+        }
+        &:hover {
+            background-color: #fff;
+            a{
+                color: #000;
+            }
+           
+        }
+        &:focus-within {
+            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.4);
+            background-color: #fff;
+            a{
+                box-shadow: none;
+                outline: 0;
+                color: #000;
+            }
+        }
     }
+
     .tab-content{
         position: relative;
         flex-grow: 1;
-
-        .tab-panel{
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        }
+    }
+    .tab-panel{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
     &.fade{
         .tab-panel{

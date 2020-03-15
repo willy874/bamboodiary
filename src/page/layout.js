@@ -5,6 +5,8 @@ import {Dialog} from '@base/components'
 import * as createApp from '../createApp'
 
 class LayoutPage {
+    constructor(vnode){
+    }
     view(vnode){
         const {
             control,

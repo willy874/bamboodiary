@@ -16,13 +16,22 @@
     }
     .sec2{
         width: 100%;
-        @include container;
+        @include media-max($sm) {
+            @include px(1rem);
+        }
+        &#{-container}{
+            @include container;
+            margin-bottom: 5rem;
+        }
         &#{-heading}{
             position: relative;
             text-align: center;
             padding-bottom: 1.5rem;
             .h2-en{     
                 font-size: 6rem;
+                @include media-max($md) {
+                    font-size: 4rem;
+                }
                 font-weight: bold;
                 letter-spacing: 0.5rem;
                 color: #3a3;
@@ -36,6 +45,9 @@
                 top: 0;
                 transform: translateX(-50%);
                 padding-top: 4rem;
+                @include media-max($md) {
+                    padding-top: 2.5rem;
+                }
                 letter-spacing: 0.25rem;
                 text-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0,0.8);
             }
@@ -48,8 +60,6 @@
                 display: flex;
                 flex-direction: column;
                 
-                .tab-link {
-                }
                 h3{
                     font-weight: bold;
                     letter-spacing: 0.125rem;
@@ -57,6 +67,20 @@
 
                 .tab-navbar{
                     flex-grow: 1;
+                }
+                .tab-nav{
+                    @include media-max($sm) {
+                        justify-content: center;
+                    }
+                }
+                .tab-link{
+                    text-align: center;
+                    @include media-max($sm) {
+                        max-width: 4rem;
+                    }
+                }
+                .tab-panel{
+                    overflow-y: auto;
                 }
 
                 p{
@@ -83,6 +107,8 @@
                             color: #000;
                         }
                         &:focus {
+                            outline: 0;
+                            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.4);
                             background-color: #fff;
                             color: #000;
                         }
@@ -92,22 +118,76 @@
 
             .img-block{
                 @include col(40%);
+                @include my(1rem);
                 img{
                     border-radius: 1rem;
                 }
+                @include media-max($xl) {
+                    @include mx(auto);
+                }
+                @include media-max($lg) {
+                    @include col(60%);
+                }
+                @include media-max($md) { 
+                    @include col(80%);
+                } 
             }
             .text-block{
                 @include col(60%);
+                @include my(1rem);
                 background-color: #007700aa;
                 border-radius: 1rem;
                 padding: 1rem;
+                @include media-max($xl) {
+                    @include col(100%);                  
+                    min-height: 18rem;
+                }
+                @include media-max($md) {                
+                    min-height: 20rem;
+                }
+                @include media-max($sm) {                
+                    min-height: 24rem;
+                }
             }
         }
     }
     .sec3{
-        background-color: rgb(31, 110, 0);
+        background-color: rgb(50, 200, 50);
         width: 100%;
         height: 60rem;
+        width: 100%;
+        &#{-container}{
+            @include container;
+            margin-bottom: 5rem;
+        }
+        &#{-heading}{
+            position: relative;
+            text-align: center;
+            padding-bottom: 1.5rem;
+            .h2-en{     
+                font-size: 6rem;
+                @include media-max($md) {
+                    font-size: 4rem;
+                }
+                font-weight: bold;
+                color: #9e9;
+                text-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0,0.8);
+            }
+            .h2-ch{
+                @include display-font(2);
+                font-weight: bold;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                padding-top: 4rem;
+                @include media-max($md) {
+                    padding-top: 2.5rem;
+                }
+                letter-spacing: 0.375rem;
+                text-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0,0.8);
+            }
+        }
         h2{
             span{
                 letter-spacing: 0.25rem;

@@ -41,25 +41,30 @@ export default class TabNavbar {
         },[
             m('nav.tab-nav',[
                 options.map((item,index)=>{
-                    return m('a.tab-link',{
-                        class: classNames({
-                            'active': index === item.active
-                        }),
-                        onclick:(e)=>{
-                            this.active = index
-                        }
-                    },item.title)
+                    return m('.tab-item',[
+                        m('.tab-link',{
+                            class: classNames({
+                                'active': index === this.active
+                            })
+                        },[
+                            m('a',{
+                                href: 'javascript:void;',               
+                                title: `切換至${item.title}`,
+                                onclick:(e)=>{
+                                    this.active = index
+                                }
+                            },item.title)
+                        ])
+                    ])
                 })
             ]),
             m('.tab-content',[
                 options.map((item,index)=>{
                     return (index === this.active)? m('.tab-panel',{
                         onbeforeremove(vnode){
-                            console.log('vnode',vnode)
                             const target = vnode.dom
                             target.classList.add("remove-animation")
                             return new Promise((resolve)=> {
-                                console.log('resolve',resolve)
                                 target.addEventListener("animationend", resolve)
                             })
                         }
