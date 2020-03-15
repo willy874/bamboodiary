@@ -13,7 +13,6 @@ export default class Home {
                 m.redraw()
             })
         })
-        
     }
     view(vnode){
         const {
