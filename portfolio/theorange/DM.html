@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html  lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Language" content="zh-tw" />
+    <link rel="canonial" href="http://theorange.com.tw/"/>
+    <link rel="Shortcut Icon" type="image/x-icon" href="img/LOGO2.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>橙色國際，專業從事自助販售無人商店市場顧問服務</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <meta name="keywords" content="無人商店" />
+    <meta name="description" content="為什麼要選擇橙色國際?" />
+    <meta name="COMPANY" content="橙色國際有限公司"/>
+    <style>
+      #main {width: 100%;}
+    </style>
+  </head>
+  <body>
+    <header>
+    </header>
+    <div id="main">
+    </div>
+    <footer>
+    </footer>
+  </body>
+
+  <script src="style_RWD.js"></script>
+  <script src="nav_RWD.js"></script>
+  <script>
+    for(var i = 1; i <= 16; i++){
+      if(navigator.userAgent.match(/Android|iPhone|iPad/i)) 
+      {$('#main').append('<img src="img/DM/'+ i +'M.jpg" alt="" width="100%">');}
+      else{$('#main').append('<img src="img/DM/'+ i +'.jpg" alt="" width="100%">');}
+    }
+  </script>
+
+</html>

@@ -48,9 +48,10 @@ export default class TabNavbar {
                             })
                         },[
                             m('a',{
-                                href: 'javascript:void;',               
+                                href: '#',               
                                 title: `切換至${item.title}`,
                                 onclick:(e)=>{
+                                    e.preventDefault()
                                     this.active = index
                                 }
                             },item.title)

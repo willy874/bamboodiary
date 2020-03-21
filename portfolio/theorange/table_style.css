@@ -1,0 +1,209 @@
+* { margin: 0; padding: 0;}
+
+body{ 
+  color: #fff;
+  background-color: #000;
+  background-image:url(img/background.jpg);
+  background-repeat: repeat-x;
+  font-family: Helvetica, Arial, STHeiti, "Microsoft JhengHei", 微軟正黑體, sans-serif;
+}
+
+/*header*/
+
+header{ 
+  width: 100%;
+}
+#showMenu { display: none; margin-top: 10px;}
+
+#nav{ 
+  width: 70%;
+  margin: auto;
+  height: 93px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#LOGO{ margin-top: 10px;}
+#LOGO_mobile{ display: none;}
+
+#nav_ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 25px;
+  width: 70%;
+}
+
+#nav_ul li{
+  margin: 0px 5px;
+  padding: 0px 5px;
+  list-style-type: none;
+}
+
+#nav h2{ 
+  font-family: 標楷體;
+  font-size: 24px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#nav_ul h2:hover{ 
+  color: #ff8400;
+}
+
+
+@media screen and (max-width: 965px)
+{ 
+  #nav { width: 95%; margin: 0px 10px; }
+  #nav_ul { margin-top: 30px;  width: 100%;}
+  #LOGO{ display: none; }
+}
+
+@media screen and (max-width: 600px) {
+  #nav { display: block;
+    height: auto;}
+  #nav_ul{ border-color: #fff;
+    border-style: solid;
+    border-width: 2px;
+    margin-top: 0px;}
+  #nav h2{ 
+    display: block;
+    background: transparent;
+    color: #fff;
+    text-align: center; 
+    border-bottom: 1px dotted gray;
+    padding: 10px 15px 5px 15px; }
+  #showMenu { 
+    font-size: 24px;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer; }
+  #navPoint{ display: none; }
+  #slider,.bx-wrapper{ display: none; }
+}
+/*nav list*/
+#menu_area {
+  margin: 0 15% 20px 36%;
+  min-width: 500px;
+  display: flex;
+  flex-direction: row;
+  background: #000;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0px 0px 20px;
+}
+#menu_benner {
+  height: auto;
+  padding: 10px;
+  margin: auto;
+}
+#menu_benner p {
+  font-size: 20px;
+}
+
+#menu_area ul {
+  width: 150px;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0.5px;
+}
+
+#menu_area li {
+  color: #fff;
+  width: 100px;
+  padding: 10px 25px;
+  font-size: 24px;
+  list-style-type: none;
+  text-align: center; 
+  border-bottom: 1px dotted gray;
+  font-family: 標楷體;
+}
+#nav_menu a {
+  cursor: pointer;
+  text-decoration: none;
+}
+#nav_menu li:hover{
+  background-color: #ff8400;
+  color: #000;
+}
+
+@media screen and (max-width: 965px){ 
+  #menu_area { margin: 0 10%;}
+}
+@media screen and (max-width: 600px){ 
+  #menu_area { 
+    margin: 0 10px; 
+    min-width: 0px;
+    flex-direction: column;
+    border-width: 0px;
+  }
+  #menu_area ul {width: 100%; margin: auto; border-width: 0 0 1px 0;}
+  #menu_area li {width: 88%; margin: auto; padding: 10px 15px;}
+  #menu_benner{ display: none;}
+
+}
+
+/*hover menu_benner li html_css*/
+
+#menu_benner_title1{ letter-spacing:10px; padding: 40px 0 20px 0; font-size: 20px; text-align: center; color: #fdeeb8;}
+#menu_benner_boder{ border-color: #ff8400; border-style: solid; border-width: 4px 0 0 0; width: 95%; margin: auto;}
+#menu_benner_title2{letter-spacing:10px; padding: 20px 0 40px 0; font-size: 20px; text-align: center; color: #fdeeb8;}
+#about_the_company{ }
+#unmanned_store{ }
+#cooperation_process{  }
+#connection{ }
+
+/*footer*/
+
+footer {  }
+
+#footer_main {
+  background-image: url(img/footer_background.jpg);
+  background-repeat: repeat-x;
+  display: flex;
+  justify-content: space-around;
+  margin: -10px auto;
+}
+
+footer ul {
+  font-size: 20px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+#footer_QR{
+  width: auto;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+#font_text ul{
+  width: 770px;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: right;
+  letter-spacing: 10px;
+  line-height: 50px;
+}
+
+.footer_text_ul{ display: none;}
+
+
+#Copyright{
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 1230px)
+{
+  #footer_QR{ display: none;}
+  #font_text ul{ font-size: 20px; text-align:center; width: 100%;}
+}
+@media screen and (max-width: 800px)
+{
+  #font_text ul{ font-size: 16px; }
+}

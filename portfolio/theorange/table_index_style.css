@@ -1,0 +1,42 @@
+#main
+{
+  width: 80%;
+  margin: auto;
+}
+
+#title {
+  text-align: center;
+  color: #fdeeb8;
+  font-size: 40px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  letter-spacing: 10px;
+  line-height: 45px;
+}
+#content
+{ width: 70%;
+  margin: auto;
+  height: auto;
+  font-size: 16px;
+  letter-spacing: 6px;
+  line-height: 25px;
+}
+
+
+#content{ display: none;}
+
+#title_h1_br,#title_h2_br { display: none; }
+@media screen and (max-width: 1000px) { #title_h1_br,#title_h2_br { display: inline; } }
+
+@media screen and (max-width: 680px)
+{
+  #title { font-size: 30px; line-height: 30px; padding: 20px 0 0 0;}
+}
+@media screen and (max-width: 600px)
+{
+  footer { margin-top: 2px;}
+}
+@media screen and (max-width: 550px)
+{
+  #content h2{ font-size: 16px;}
+}

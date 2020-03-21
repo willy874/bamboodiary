@@ -8,7 +8,7 @@ export default class Control{
     constructor(){
         this.rootRoute = [{
             name: '首頁',
-            link: '/',
+            link: '/home',
             page: Layout(Page.Home),
         }]
         this.mainNavbar = MainNavbar.node

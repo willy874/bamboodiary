@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html  lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Language" content="zh-tw" />
+    <link rel="canonial" href="http://theorange.com.tw/"/>
+    <link rel="Shortcut Icon" type="image/x-icon" href="img/LOGO2.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>橙色國際，專業從事自助販售無人商店市場顧問服務</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <meta name="keywords" content="無人商店,人事成本,轉型,擴大業務,販賣機,自動販售,橙色,自助販售" />
+    <meta name="description" content="專業從事自助販售無人商店市場顧問服務，24HR營收不間斷最熱門的商業模式。橙色無人商店設備真正實現協助各大產業24HR營運不打烊，省去人力成本及時間並使收益最大化，提供新一代創業家最低成本與最簡易的創業模式、輔導各式各樣產業轉型成為無人商店的顧問服務。我們不求粗放式的發展店鋪數量，嚴格審核並協助客戶轉型後能賺錢才是唯一真理。" />
+    <meta name="COMPANY" content="橙色國際有限公司"/>
+    <meta name="google-site-verification" content="RCQw5kPm3L6_jTbzyuMqQmId2IW7TToBenNAeHbfcSo" />
+    <link rel="stylesheet" href="slider.css">
+    <script>
+      $(document).ready(function(){
+        $('.slider').bxSlider({ auto: true, mode: 'fade', peed: 1000, pause: 4000 });  //slider
+
+        //網頁載入判斷
+        function checkMenu(){
+          if($('#showMenu').is(':visible')){ 
+            $('#nav_ul').hide(); 
+          }else{
+            $('#nav_ul').show().css('display','flex'); 
+          }
+        }
+        checkMenu();
+        //視窗調整大小判斷
+        $(window).resize(function(){ 
+          checkMenu();
+          //window.location.reload();
+        });
+
+        //showMenu開關
+        $('#showMenu').click(function(){
+          $('#nav_ul').slideToggle();
+          $('#nav_menu').hide();
+          if($('#nav_ul').is(':visible')){ $('#nav_ul').css('display','block');  }
+        });
+      });
+      var filename = location.href; 
+      filename = filename.substr(filename.lastIndexOf('/')+1);  //取得文件名稱
+      filename = filename.substring(0, filename.length-5);      //清除字尾
+
+      //net RWD style 加載
+      if(navigator.userAgent.match(/Android|iPhone|iPad/i)) 
+      {$('head').append('<link rel="stylesheet" type="text/css" href="mobile_style.css">');}
+      else{$('head').append('<link rel="stylesheet" type="text/css" href="table_style.css">');}
+
+
+      //Page RWD style 加載
+      var table_net_name = 'table_'+ filename +'_style.css'
+      var mobile_net_name = 'mobile_'+ filename +'_style.css'
+      if(navigator.userAgent.match(/Android|iPhone|iPad/i)) 
+      {$('head').append('<link rel="stylesheet" type="text/css" href="'+ mobile_net_name +'">');}
+      else{$('head').append('<link rel="stylesheet" type="text/css" href="'+ table_net_name +'">');}
+      
+      //if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {window.location = 'mobile_index.html';}
+
+      // Facebook Pixel Code
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+       if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+       n.queue=[];t=b.createElement(e);t.async=!0;
+       t.src=v;s=b.getElementsByTagName(e)[0];
+       s.parentNode.insertBefore(t,s)}(window, document,'script',
+                                       'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '2040453739585264');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=2040453739585264&ev=PageView&noscript=1"
+                   /></noscript>
+    <!-- End Facebook Pixel Code -->
+  </head>
+  <body>
+    <header>
+      <div id="nav">
+        <div id="showMenu"><img src="img/LOGO_MENU.jpg" alt="" height="60px"></div>
+        <div id="LOGO"><a href="index.html"><img src="img/LOGO7(png).png" alt="" width="180px" height="76px" ></a></div>
+        <div id="LOGO_mobile"><a href="index.html"><img src="img/LOGO_index.jpg" alt="" width="100%" ></a></div>
+        <ul id="nav_ul">
+          <li><h2>關於橙色</h2></li>
+          <li><h2>服務說明</h2></li>
+          <li><h2>最新消息</h2></li>
+          <li><h2>聯繫我們</h2></li>
+        </ul>
+      </div>
+      <div id="nav_menu">
+        <div id="menu_area">
+          <ul>
+            <a href="about_the_company.html"><li>關於我們</li></a>
+            <a href="unmanned_store.html"><li>關於無人</li></a>
+            <a><li>團隊介紹</li></a>
+            <a><li>服務經驗</li></a>
+          </ul>
+          <ul>
+            <a href="cooperation_process.html"><li>合作流程</li></a>
+            <a href="product_description.html"><li>產品介紹</li></a>
+            <a><li>品牌優勢</li></a>
+            <a href="question_answer.html"><li>問題回答</li></a>
+          </ul>
+          <ul>
+            <a><li>近期活動</li></a>
+            <a><li>文章分享</li></a>
+            <a><li>相關職缺</li></a>
+          </ul>
+          <ul>
+            <a href="store_location.html"><li>門市據點</li></a>
+            <a href="connection.html"><li>關注我們</li></a>
+          </ul>
+          <div id="menu_benner">
+            <div id="benner_content"><img src="img/LOGO2.jpg" alt="" height="170px"></div>
+          </div>
+        </div></div>
+
+    </header>
+
+    <div id="main">
+      <a href="index.html"><section id="sec1">
+        <div class="slider" id="slider">
+          <div><img src="img/benner01.jpg" alt="" width="100%"></div>
+          <div><img src="img/1orange.jpg" alt="" width="100%"></div>
+          <div><img src="img/3orange.jpg" alt="" width="100%"></div>
+        </div>
+        </section></a>
+      <section id="sec2">
+        <div id="content">
+          <figure id="fie1"><h1>橙色國際<br>The Orange</h1></figure>
+          <figure id="fie2"><h3>專業從事自助販售無人商店市場顧問服務<br>(24HR營收不間斷最熱門的商業模式)</h3>
+            <p>橙色無人商店設備真正實現協助各大產業24HR營運不打烊，省去人力成本及時間並使收益最大化，提供新一代創業家最低成本與最簡易的創業模式、輔導各式各樣產業轉型成為無人商店的顧問服務。我們不求粗放式的發展店鋪數量，嚴格審核並協助客戶轉型後能賺錢才是唯一真理。</p>
+          </figure>
+          <figure id="fie3">
+            <h2>品質保證</h2>
+            <div class="boder2"></div><br>
+            <p>橙色國際有限公司的所有設備都具有一套完整的質量控制體系，已完成對設備進行電磁兼容實驗和高、低溫測試，確保產品在設計、生產階段，即滿足符合規定的電磁兼容性和高可靠性。另公司成立專案品管小組部門，於生產中進行現場監管、及時發現、處理問題，確保了公司設備品質的穩定可靠。</p>
+          </figure>
+          <figure id="fie4">
+            <h2>生產體系</h2>
+            <div class="boder2"></div><br>
+            <p>我們致力專注於生產最高品質的設備，因此從芬蘭、德國、日本等國引進各種類型的鈑金數控加工設備，諸如：芬蘭FINE-POWRE激光數控複合沖床、日本NTC鐳射切割機、TOYOKOKI數控多軸折彎機、鉚釘機、慢走絲線切割機等一系列先進的鈑金加工、模具製作設備等。用高端的生產設備確保精良的生產工藝，以高品質的產品滿足市場的需求。</p>
+          </figure>
+          <figure id="fie5">
+            <h2>研發體系</h2>
+            <div class="boder2"></div><br>
+            <p>開創性地串聯式的櫃式自動售貨機開發，以及具有常溫、加熱、製冷、保溫等功能之售貨設備，迎合各類商品的不同設備，已成為自動售貨行業的新型標杆。軟件研發團隊應市場發展的需要，開發了功能強大的自動售貨機物聯網雲服務後台，互聯網、智能終端、平台服務深度融合的新商業模式，是企業降低成本，創新服務，高效管理的有利武器。</p>
+          </figure>
+        </div>
+      </section>
+    </div> 
+    <footer>
+      <div id="footer_top"><img src="img/footer_top_background.jpg" alt="" width="100%"></div>
+      <div id="footer_main">
+        <div id="footer_QR">
+          <img src="img/QR.png" alt="" width="160px">
+        </div>
+        <div id="font_text"><ul>
+          <li>服務電話：<br class="footer_text_ul">02-27468427</li>
+          <li>電子郵件：<br class="footer_text_ul">the.orange.tw@gmail.com</li>
+          <li>服務地址：<br class="footer_text_ul">台北市松山區八德路四段604號2樓之5</li>
+          </ul></div> 
+      </div>
+      <div id="Copyright">請使用Chrome、Opera、IE10以上版本等瀏覽器觀看<br>© Copyright 2018-2019 theorange.com All rights reserved.</div>
+
+    </footer>
+  </body>
+  <script src="nav_RWD.js"></script>
+</html>

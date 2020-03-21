@@ -1,0 +1,10 @@
+.header_container{
+        .header-top_navbar{
+            display: none;
+        }
+    &.active{
+        .header-top_navbar{
+            display: none;
+        }
+    }
+}

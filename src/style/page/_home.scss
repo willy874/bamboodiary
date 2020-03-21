@@ -1,4 +1,11 @@
 .home{
+/*
+ *   ****** *******  ******  ***
+ *  **      **      **        **
+ *   *****  ******* *         **
+ *       ** **      **        **
+ *  ******  *******  ******  ****
+*/  
     .sec1{
         height: 100vh;
         width: 100%;
@@ -14,14 +21,24 @@
             }
         }
     }
+/*
+ *   ****** *******  ******   *****
+ *  **      **      **       **  **
+ *   *****  ******* *           **
+ *       ** **      **         **
+ *  ******  *******  ******  *******
+*/    
     .sec2{
         width: 100%;
         @include media-max($sm) {
             @include px(1rem);
         }
+        margin-bottom: 16rem;
+        @include media-max($xl) {
+            margin-bottom: 3em;
+        }
         &#{-container}{
             @include container;
-            margin-bottom: 5rem;
         }
         &#{-heading}{
             position: relative;
@@ -34,7 +51,7 @@
                 }
                 font-weight: bold;
                 letter-spacing: 0.5rem;
-                color: #3a3;
+                color: #4c4;
                 text-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0,0.8);
             }
             .h2-ch{
@@ -69,21 +86,47 @@
                     flex-grow: 1;
                 }
                 .tab-nav{
-                    @include media-max($sm) {
+                    @include media-max($md) {
                         justify-content: center;
+                    }
+                    @include media-max($xs) {
+                        flex-wrap: wrap;
+                    }
+                }
+                .tab-item{
+                    @include media-max($sm) {
+                        @include px(0.5rem);
+                    }
+                    @include media-max($xs) {
+                        @include py(0.5rem);
                     }
                 }
                 .tab-link{
                     text-align: center;
-                    @include media-max($sm) {
+                    @include media-max($md) {
                         max-width: 4rem;
                     }
                 }
                 .tab-panel{
                     overflow-y: auto;
+                    &::-webkit-scrollbar{
+                        width: 0.75rem;
+                    }
+                    &::-webkit-scrollbar-track {
+                        border-radius: 1rem;
+                        background-color: #777;
+                    }
+                    &::-webkit-scrollbar-thumb {
+                        border-radius: 1rem;
+                        background-color: #333;
+                    }
+                }
+                .sec2-row-col-btn{
+                    padding-top: 0.5rem;
                 }
 
                 p{
+                    font-size: 1.125rem;
                     padding: 1rem 0;
                 }
                 
@@ -135,30 +178,36 @@
             .text-block{
                 @include col(60%);
                 @include my(1rem);
-                background-color: #007700aa;
+                background-color: #006600cc;
                 border-radius: 1rem;
                 padding: 1rem;
+                
                 @include media-max($xl) {
-                    @include col(100%);                  
-                    min-height: 18rem;
-                }
-                @include media-max($md) {                
+                    @include col(100%);
                     min-height: 20rem;
                 }
                 @include media-max($sm) {                
                     min-height: 24rem;
                 }
+                @include media-max($xs) {                
+                    min-height: 30rem;
+                }
             }
         }
     }
+/*
+ *   ****** *******  ******  *****
+ *  **      **      **           **
+ *   *****  ******* *         *****
+ *       ** **      **           **
+ *  ******  *******  ******  *****
+*/  
     .sec3{
-        background-color: rgb(50, 200, 50);
-        width: 100%;
-        height: 60rem;
+        background-color: #8bbb8b;//#8bbb8b 
         width: 100%;
         &#{-container}{
+            @include py(3rem);
             @include container;
-            margin-bottom: 5rem;
         }
         &#{-heading}{
             position: relative;
@@ -170,7 +219,7 @@
                     font-size: 4rem;
                 }
                 font-weight: bold;
-                color: #9e9;
+                color: #008c18; // #008c18
                 text-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0,0.8);
             }
             .h2-ch{
@@ -187,6 +236,14 @@
                 letter-spacing: 0.375rem;
                 text-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0,0.8);
             }
+            h3{
+                @include display-font(3);
+                padding-top: 1rem;
+                letter-spacing: 0.0625rem;
+                word-spacing: 0.25rem;
+                font-weight: bold;
+                text-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0,0.8);
+            }
         }
         h2{
             span{
@@ -195,9 +252,249 @@
                 text-shadow: 0 0 0.5rem rgba(0, 0, 0,0.8);
             }
         }
+        .sec3_website-row{
+            @include row;
+
+            &#{-col}{
+                display: flex;
+                @include col(50%);
+                @include my(1rem);
+                @include media-max($md) {
+                    @include col(100%);
+                }
+
+                &#{-figure}{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+
+                    figure{
+                        border: 0.25rem solid #fff;
+                        border-radius: 0.75rem;
+                        position: relative;
+                        img{
+                            display: block;
+                            border-radius: 0.5rem;
+                            width: 100%;
+                            height: 15rem;
+                            object-fit: cover;
+                        }
+                        mask{
+                            opacity: 0;
+                            background-color: #00000099;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            transition: all 0.3s;
+                            padding: 1rem 1.5rem;
+                            overflow: auto;
+                            z-index: 1;
+                            span{
+                                font-size: 1.125rem;
+                            }
+                            a{
+                                &::after{
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    left: 0;
+                                    z-index: 1;
+                                    pointer-events: auto;
+                                    content: "";
+                                }
+                            }
+                        }
+                        &:hover {
+                            mask{
+                                opacity: 1;
+                            }
+                        }
+                        &:focus-within {
+                            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.4);
+                            mask{
+                                opacity: 1;
+                                a{
+                                    outline: 0;
+                                }
+                            }
+                        }
+                    }
+                    
+                    figcaption{
+                        @include py(1.5rem);
+                        h4{
+                            color: #333;
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                        }
+
+                    }
+                }
+                
+            }
+        }
+
+        .sec3_singlepage-row{
+            @include row;
+
+            &#{-col}{
+                display: flex;
+                @include col(25%);
+                @include my(1rem);
+                @include media-max($xl) {
+                    @include col(50%);
+                }
+                @include media-max($md) {
+                    @include col(100%);
+                }
+
+                &#{-figure}{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+
+                    figure{
+                        border: 0.25rem solid #fff;
+                        border-radius: 0.75rem;
+                        position: relative;
+                        img{
+                            display: block;
+                            border-radius: 0.5rem;
+                            width: 100%;
+                            height: 15rem;
+                            object-fit: cover;
+                        }
+                        mask{
+                            opacity: 0;
+                            background-color: #00000099;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            transition: all 0.3s;
+                            padding: 1rem 1.5rem;
+                            overflow: auto;
+                            z-index: 1;
+                            span{
+                                font-size: 1.125rem;
+                            }
+                            a{
+                                &::after{
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    left: 0;
+                                    z-index: 1;
+                                    pointer-events: auto;
+                                    content: "";
+                                }
+                            }
+                        }
+                        &:hover {
+                            mask{
+                                opacity: 1;
+                            }
+                        }
+                        &:focus-within {
+                            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.4);
+                            mask{
+                                opacity: 1;
+                                a{
+                                    outline: 0;
+                                }
+                            }
+                        }
+                    }
+                    
+                    figcaption{
+                        h4{
+                        }
+
+                    }
+                }
+                
+            }
+        }
     }
+/*
+ *   ****** *******  ******   ***
+ *  **      **      **       * **
+ *   *****  ******* *       *  **
+ *       ** **      **     ********
+ *  ******  *******  ******    **
+*/ 
+    .sec4{
+        width: 100%;
+        background-size: cover;
+        background-image: url('../../images/bg/bambooBlog.jpg');
 
+        @include media-max($sm) {
+            @include px(1rem);
+        }
+        &#{-container}{
+            @include container;
+            padding-top: 3rem;
+        }
+        &#{-heading}{
+            position: relative;
+            text-align: center;
+            padding-bottom: 1.5rem;
+            .h2-en{     
+                font-size: 6rem;
+                @include media-max($md) {
+                    font-size: 4rem;
+                }
+                font-weight: bold;
+                letter-spacing: 0.5rem;
+                color: #4c4;
+                text-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0,0.8);
+            }
+            .h2-ch{
+                @include display-font(2);
+                font-weight: bold;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                padding-top: 4rem;
+                @include media-max($md) {
+                    padding-top: 2.5rem;
+                }
+                letter-spacing: 0.25rem;
+                text-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0,0.8);
+            }
+        }
 
+        .sec4_blog-row{
+            &#{-col}{
+                &#{-figure}{
+                    figure{
+                        img{
 
+                        }
+                    }
+                    &#{-text}{
+                        h3{
+
+                        }
+                        p{
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 

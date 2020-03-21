@@ -2,113 +2,142 @@ import m from 'mithril'
 import classNames from 'classnames'
 
 export default class Header {
-    constructor(){
+    constructor(vnode) {
         this.navbar = false
     }
-    view(vnode){
+    oncreate() {}
+    animationCallback(target){
+
+        
+    }
+    view(vnode) {
         const {
             control,
             model,
             status
         } = vnode.attrs
-        return m('header',[
-            m('h1',{
-                class: classNames('header_brand')
-            },[
-                m('a',{
-                    href: '#!/',
+        return m('header', [
+            m('h1', {
+                class: classNames('header_brand',{
+                    'active': this.navbar
+                }),
+            }, [
+                m('a', {
+                    href: '#!/home',
                     title: '回到首頁'
-                },[
-                    m('img',{
+                }, [
+                    m('img', {
+                        class: 'before',
                         src: './images/logo/logo-dark.png',
-                        style:{
+                        style: {
+                            width: '15rem'
+                        }
+                    }),
+                    m('img', {
+                        class: 'after',
+                        src: './images/logo/logo-light.png',
+                        style: {
                             width: '15rem'
                         }
                     })
                 ])
             ]),
-            m('div',{
-                class: classNames('header_container',{
-                    active: this.navbar
+            m('div', {
+                class: classNames('header_container', {
+                    active: this.navbar,
+                    transitionend: (e)=>{
+                        console.log(e)
+                    }
                 })
-            },[
-                m('div',{
+            }, [
+                m('div', {
                     class: classNames('header_container-btn')
-                },[
-                    m('div',{
+                }, [
+                    m('div', {
                         class: classNames('header_container-btn-top')
                     }),
-                    m('div',{
+                    m('div', {
                         class: classNames('header_container-btn-center')
                     }),
-                    m('div',{
+                    m('div', {
                         class: classNames('header_container-btn-bottom')
                     }),
-                    m('a',{
-                        href: 'javascript:void;',
+                    m('a', {
+                        href: '#',
                         class: classNames('header_container-btn-a'),
-                        title: (this.navbar)?'收合選單':'展開選單',
-                        onclick: (e)=>{
-                            this.navbar = (this.navbar)?false:true;
+                        title: (this.navbar) ? '收合選單' : '展開選單',
+                        onclick: (e) => {
+                            e.preventDefault()
+                            this.navbar = (this.navbar) ? false : true;
+                            
                         }
                     }),
-                ])
-            ]),
-
-            m('div',{
-                class: classNames('header_navbar')
-            },[
-                m('nav',{
-                    class: classNames('header_navbar')
-                },[
-                    m('ul',
-                        control.headerNavbar.map(item=>{
-                            return m('li',{
-                                class: classNames('header-navbar_panel-item')
-                            },[
-                                m('a',{
-                                    class: classNames('header-navbar_panel-item-link'),
-                                    href: `#!${item.link}`
-                                },item.name)
-                            ])
-                        })
-                    )
-                ])
-            ]),
-
-            m('div',{
-                class: classNames('header_navbar')
-            },[
-                m('div',{
-                    class: classNames('header_navbar')
-                },[
-                    m('div',{
-                        class: classNames('header-aside_brand-photo')
-                    })
                 ]),
-                m('nav',{
-                    class: classNames('header-aside_main-navbar')
-                },[
-                    m('ul',{
-                        class: classNames('header-aside_main-navbar_panel')
-                    },
-                        control.mainNavbar.map(item=>{
-                            return m('li',{
-                                class: classNames('main-navbar_panel-item')
-                            },[
-                                m('a',{
-                                    class: classNames('main-navbar_panel-item-link'),
-                                    href: `#!${item.link}`
-                                },item.name)
-                            ])
-                        }),
-                        m('li',{
-                            class: classNames('main-navbar_panel-item--grow'),
+                /******************************************************/
+                m('div', {
+                    class: classNames('header_container-navbar')
+                }, [
+                    /******************************************************/
+                    m('div', {
+                        class: classNames('header_navbar')
+                    }, [
+                        m('div', {
+                            class: classNames('header-aside_brand-photo')
                         })
-                    )
-                ])
+                    ]),
+                    /******************************************************/
+                    m('nav', {
+                        class: classNames('header-main_navbar')
+                    }, [
+                        m('ul', {
+                                class: classNames('navbar_panel')
+                            },[
+                                control.mainNavbar.map(item => {
+                                    return m('li', {
+                                        class: classNames('navbar_panel-item')
+                                    }, [
+                                        m('a', {
+                                            class: classNames('navbar_panel-item-link','create'),
+                                            //href: `#!${item.link}`,
+                                            title: `連結至${item.name}頁`,
+                                            onclick:()=>{
+                                                this.navbar = false
+                                                setTimeout(()=>{
+                                                    m.route.set(item.link)
+                                                },300)
+                                            }
+                                        }, item.name)
+                                    ])
+                                }),
+                                m('li', {
+                                    class: classNames('navbar_panel-item--grow'),
+                                })
+                            ])
+                    ]),
+                    /******************************************************/
+                    m('nav', {
+                        class: classNames('header-top_navbar')
+                    }, [
+                        m('ul',
+                            control.headerNavbar.map(item => {
+                                return m('li', {
+                                    class: classNames('navbar_panel-item')
+                                }, [
+                                    m('a', {
+                                        class: classNames('navbar_panel-item-link'),
+                                        href: `#!${item.link}`
+                                    }, item.name)
+                                ])
+                            })
+                        )
+                    ])
+                    /******************************************************/
+                ]),
+
             ]),
-           
+
+
+
         ])
     }
 

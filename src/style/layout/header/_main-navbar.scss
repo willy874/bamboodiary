@@ -1,4 +1,78 @@
-.header_navbar{
-
+.header_container-navbar{
+    height: 100%;
+    display: flex;
 }
+.header_container{
+    overflow: hidden;
+        .header-main_navbar{
+            opacity: 0;
+            pointer-events: none;
+            display: inline-flex;
+            flex-direction: column;
+            overflow: hidden;
+            background-color: #33ff99;;
+            height: 0;
+            width: 240px + 16px*4;
+            .navbar_panel{
+                display: flex;
+                flex-direction: column;
+                padding-top: 6rem;
 
+                &#{-item}{
+                    position: relative;
+                    padding: 1rem 1.5rem;
+
+                    &#{-link}{
+                        color: #333;
+                        font-size: 1.25rem;
+                        font-weight: bolder;
+                        letter-spacing: 0.125rem;
+                        @include stretched;
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            right: 3rem;
+                            top: 50%;
+                            font-size: 0.75rem;
+                            transform: translateY(-50%);
+                            display: block;
+                            width: 60px;
+                            animation: content-animate 1.5s infinite linear;
+                        }
+                    }
+                    &#{--grow}{
+                        flex-grow: 1;
+                    }
+                }
+            }
+        }
+    &.active{
+        .header-main_navbar{
+            opacity: 1;
+            pointer-events: auto;
+            animation: main-navbar 0.6s ease;
+            height: 100%;
+            .navbar_panel{
+                
+                &#{-item}{
+                    
+                    &#{-link}{
+                        color: #555;
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes main-navbar{
+    0% {height: 0;}
+    50% {height: 0;}
+    100% {height: 100%;}
+}
+@keyframes content-animate{
+    0%{content:'建置中';}
+    25%{content:'建置中.';}
+    50%{content:'建置中..';}
+    75%{content:'建置中...';}
+    100%{content:'建置中';}
+}

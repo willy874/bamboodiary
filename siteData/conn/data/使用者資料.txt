@@ -1,0 +1,4 @@
+$hostname_conn = "localhost";       //資料庫主機名稱
+$database_conn = "bamboodi_db";     //這個網站的資料庫名稱
+$username_conn = "bamboodi_user";   //進入資料庫主機的管理者名稱
+$password_conn = "cpy775tw7174249"; //進入資料庫主機的管理者密碼

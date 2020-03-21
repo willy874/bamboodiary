@@ -10,20 +10,5 @@ body{
 }
 .main{
     z-index: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow-y: auto;
-    &::-webkit-scrollbar{
-        width: 0.75rem;
-    }
-    &::-webkit-scrollbar-track {
-        background-color: #777;
-    }
-    &::-webkit-scrollbar-thumb {
-        border-radius: 1rem;
-        background-color: #333;
-    }
+    @include overflow-scrollbar;
 }

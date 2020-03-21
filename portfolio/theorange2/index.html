@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="canonial" href="http://theorange.com.tw/" />
+  <link rel="Shortcut Icon" type="image/x-icon" href="img/LOGO_B.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>橙色國際≣連鎖加盟品牌｜智能自動販售無人商店</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="slider.css">
+  <link rel="stylesheet" href="store_location.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="index_style.css">
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="popper.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <meta name="keywords" content="無人商店,自動化,加盟,販售機,販賣機,自動販售,橙色,自助販售" />
+  <meta name="description" content="專業從事自動販售機無人商店的市場顧問服務。橙色無人商店設備真正實現協助各大產業24HR營運不打烊，省去人力成本及時間並使收益最大化，提供新一代創業家最低成本與最簡易的創業模式、輔導各式各樣產業轉型成為無人商店的顧問服務。" />
+  <meta name="COMPANY" content="橙色國際有限公司" />
+  <meta name="og:description" content="專業從事自動販售機無人商店的市場顧問服務。橙色無人商店設備真正實現協助各大產業24HR營運不打烊，省去人力成本及時間並使收益最大化，提供新一代創業家最低成本與最簡易的創業模式、輔導各式各樣產業轉型成為無人商店的顧問服務。" />
+  <meta property="og:title" content="橙色國際-連鎖加盟品牌｜智能自動販售無人商店" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://theorange.com.tw/index.html" />
+  <meta property="og:image" content="http://theorange.com.tw/img/FBimg2.jpg" />
+  <meta property="og:image" content="http://theorange.com.tw/img/FBimg1.jpg" />
+  <meta property="og:image" content="http://theorange.com.tw/img/FBimg3.jpg" />
+  <meta property="og:site_name" content="橙色國際-連鎖加盟品牌｜智能自動販售無人商店" />
+  <meta property="fb:admins" content="たけ 竹子" />
+  <meta name="google-site-verification" content="RCQw5kPm3L6_jTbzyuMqQmId2IW7TToBenNAeHbfcSo" />
+  <script>
+    /*benner slider*/
+    $(document).ready(function() {
+        //ready
+        function initialization() {
+          $('#sec2 p').hide();
+          $('#sec3 p').hide();
+          $('#sec4 span').hide();
+          $('#sec4 figcaption').hide();
+        }
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+          $('#cooperation').find('span').stop(true, true).slideUp();
+          $(this).find('span').stop(true, true).slideDown();
+          $('#sec4 figcaption').hide();
+        } else {
+          $(window).resize(function() {
+            initialization();
+          });
+          initialization()
+          $('#sec2 figure').hover(function() {
+            $(this).find('p').stop(true, true).slideToggle();
+          });
+          $('#sec3 figure').hover(function() {
+            $(this).find('p').stop(true, true).slideToggle();
+          });
+          $('.cooperation').click(function() {
+            if ($(window).width() < 768) {
+              $('#cooperation').find('span').stop(true, true).slideUp();
+              $(this).find('span').stop(true, true).slideDown();
+            } else {
+              $(this).find('span').slideUp();
+              var spanString = $(this).find('span').html();
+              $('#sec4 figcaption').slideDown();
+              $('#sec4 figcaption').html(spanString);
+            }
+          });
+        }
+
+        //slider
+        $('.slider').bxSlider({
+          auto: true,
+          mode: 'fade',
+          peed: 1000,
+          pause: 4000
+        });
+        //guide
+        $('#sec1 p:eq(0)').click(function() {
+          $('html,body').animate({
+            scrollTop: $('#sec2').offset().top
+          }, 1000);;
+        })
+        $('#sec1 p:eq(1)').click(function() {
+          $('html,body').animate({
+            scrollTop: $('#sec3').offset().top
+          }, 1000);;
+        })
+        $('#sec1 p:eq(2)').click(function() {
+          $('html,body').animate({
+            scrollTop: $('#sec4').offset().top
+          }, 1000);;
+        })
+      })
+
+      // Facebook Pixel Code
+      ! function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+          n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2040453739585264');
+    fbq('track', 'PageView');
+
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=2040453739585264&ev=PageView&noscript=1"
+                   /></noscript>
+  <!-- End Facebook Pixel Code -->
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="nav">
+      <a class="navbar-brand" href="index.html"><img src="img/LOGO_index_B(png).png" id="LOGO" alt="" width="120px"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav_link_a" href="index.html">首頁<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav_link_a" href="franchise.html">加盟我們</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav_link_a" href="#">產品介紹</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav_link_a" href="store_location.html">門市據點</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- benner slider -->
+  <div class="slider" id="slider">
+    <div><img src="img//slider/benner-produc02.jpg" alt="" width="100%"></div>
+  </div>
+  <main role="main">
+    <!-- index -->
+    <section id="sec1">
+      <h1>導覽橙色</h1>
+      <p><img src="img/icon/online-store.png" width="80" height="80" alt=""><span>為何轉型</span></p>
+      <p><img src="img/LOGO(png).png" width="80" height="80" alt=""><span>橙色優勢</span></p>
+      <p><img src="img/icon/team.png" width="80" height="80" alt=""><span>合作詳情</span></p>
+    </section>
+
+    <section id="sec2">
+      <h1>傳統商店為何轉型無人?</h1>
+      <div>
+        <div>
+          <figure>
+            <div class="sec2img"><img src="img/icon/staff.png" alt="" width="100%"></div>
+            <figcaption>
+              <h2>降低人事成本</h2>
+              <p>在人事成本持續上漲的年代，基本薪資年年調高，無人化大幅減少人力運用。</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="sec2img"><img src="img/icon/calendar.png" alt="" width="100%"></div>
+            <figcaption>
+              <h2>節省時間成本</h2>
+              <p>各種結帳、服務、雜事讓你不能離開店面，無人化讓電腦取代人力。</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="sec2img"><img src="img/icon/profit.png" alt="" width="100%"></div>
+            <figcaption>
+              <h2>利潤的落差性</h2>
+              <p>節省掉人力成本，提高利潤讓營收增加，也可以將價格回饋消費者。</p>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <div class="sec2img"><img src="img/icon/delivery.png" alt="" width="100%"></div>
+            <figcaption>
+              <h2>營業全日不打烊</h2>
+              <p>將傳統一天上班8小時的行為徹底改變，每間門店24H全年無休。</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="sec2img"><img src="img/icon/accounting02.png" alt="" width="100%"></div>
+            <figcaption>
+              <h2>銷貨會計簡化</h2>
+              <p>每天要做的銷貨表報和會計資料一切簡化，讓電腦幫你處理龐大雜亂的數字。</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="sec2img"><img src="img/icon/tablet.png" alt="" width="100%"></div>
+            <figcaption>
+              <h2>店面行動管理</h2>
+              <p>破除要被店面綁住的限制，讓行動裝置提供實時的監控。</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section id="sec3">
+      <h1>橙色擁有的優勢</h1>
+      <div>
+        <div>
+          <figure>
+            <div class="sec3img"><img src="img/icon/shield.png" alt="" width="100%"></div>
+            <figcaption>
+              <h2>安全的硬體強化</h2>
+              <p>每個格子櫃都有獨立的工業用鎖，付款後相對應的格門彈開，一對一的商品存放方式較安全有保障、且更有質感的精品效果。</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="sec3img"><img src="img/icon/promotion.png" alt="" width="100%"></div>
+            <figcaption>
+              <h2>免費的行銷管道</h2>
+              <p>免費支持多渠道廣告投放，營銷團隊為每個合作夥伴的店鋪進行公開行銷推廣，大幅提升店鋪曝光度。</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="sec3img"><img src="img/icon/social-care.png" alt="" width="100%"></div>
+            <figcaption>
+              <h2>協助轉型的營運</h2>
+              <p>橙色非常注重轉型後營運狀況。從紮實的硬體配送、軟體的不斷精進更新、專業的營運支持，轉型後持續優化進步。</p>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <div class="sec3img"><img src="img/icon/debit-card.png" alt="" width="100%"></div>
+            <figcaption>
+              <h2>客製化支付方式</h2>
+              <p>除了傳統現金支付及找零的系統，其他非現金支付方式也可以客製化追加，包含電子票證、行動支付、電子支付等。</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="sec3img"><img src="img/icon/3d-printing-software.png" alt="" width="100%"></div>
+            <figcaption>
+              <h2>強大的軟體系統</h2>
+              <p>購物系統流有網購型態之分類導購，實現簡單銷售，自動報表生成、遠端客戶問題處理等。所有店面狀況均可透過手機掌控。</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="sec3img"><img src="img/icon/support.png" alt="" width="100%"></div>
+            <figcaption>
+              <h2>完整的售後服務</h2>
+              <p>1對1專員顧問諮詢服務、線上技術指導、設備3年免費保修、機台回購保證、後台軟體終生免費使用權。</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section id="sec4">
+      <h1>我們如何一同合作?</h1>
+      <div id="cooperation">
+        <div class="cooperation">
+          <h3>項目諮詢</h3>
+          <span>如果您對合作有興趣或有店舖轉型意向，歡迎聯繫我們了解整個無人化產業與商機。</span>
+        </div>
+        <div class="triangle"></div>
+        <div class="cooperation">
+          <h3>項目考察</h3>
+          <span>我們將根據您的需求進行考察與審核，我們將邀請您到就近實體店或公司總部進行考察與專業顧問進行諮商服務。</span>
+        </div>
+        <div class="triangle"></div>
+        <div class="cooperation">
+          <h3>簽約合作</h3>
+          <span>根據商談結果雙方簽訂合作意向協議，收到訂金後，本公司立即派遣工程團隊至指定門店安裝軟硬體及週邊設施。</span>
+        </div>
+        <div class="triangle"></div>
+        <div class="cooperation">
+          <h3>交接培訓</h3>
+          <span>當您付清尾款時專員將到府教學店面運營流程、後台操作細節等，並適時給予操作協助直到您完全熟悉。</span>
+        </div>
+        <div class="triangle"></div>
+        <div class="cooperation">
+          <h3>售後服務</h3>
+          <span>營運的過程中如有發生任何問題請於立即與我們聯繫，我們將於第一時間派專員為您處理。</span>
+        </div>
+      </div>
+      <figure>
+        <div id="sec4benner">
+          <img src="img/cooperation_process01.jpg" alt="" width="100%">
+        </div>
+        <figcaption>
+        </figcaption>
+      </figure>
+    </section>
+  </main>
+  <footer>
+    <figure class="row">
+      <figcaption class="col-xs-12 col-md-12 col-lg-8">
+        <ul>
+          <li>服務電話：<a href="tel:+886-2-2746-8427">02-27468427</a></li>
+          <li>電子郵件：<a href="mailto:the.orange.tw@gmail.com?Subject=For%20TheOrange" target="_top">the.orange.tw@gmail.com</a></li>
+          <li>服務地址：台北市松山區八德路四段604號2樓之5</li>
+        </ul>
+      </figcaption>
+      <nav class="col-xs-12 col-md-12 col-lg-4">
+        <ul>
+          <li id="footer_FB">
+            <a href="https://www.facebook.com/%E6%A9%99%E8%89%B2%E5%9C%8B%E9%9A%9B-638675916480268/">
+                <img src="img/connection/FBgood1(png).png" alt="" width="75px"></a></li>
+          <li id="footer_IG">
+            <a href="https://www.instagram.com/the.orange.tw/">
+                <img src="img/connection/instagram(png).png" alt="" width="75px"></a></li>
+          <li id="footer_LINE">
+
+            <img src="img/connection/line&a(png).png" alt="" width="75px"></li>
+          <li id="footer_WeChat">
+            <img src="img/connection/WeChar3(png).png" alt="" width="75px"></li>
+        </ul>
+      </nav>
+    </figure>
+    <div>請使用Chrome、Opera、IE10以上版本等瀏覽器觀看<br>© Copyright 2018-2019 theorange.com All rights reserved.</div>
+  </footer>
+</body>
+<script>
+
+
+</script>
+
+</html>

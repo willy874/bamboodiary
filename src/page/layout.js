@@ -21,7 +21,11 @@ class LayoutPage {
                 model,
                 status
             }),
-            vnode.children,
+            m.fragment({
+                onbeforeremove(){
+                    
+                }
+            },vnode.children),
             m(Footer,{
                 control,
                 model,

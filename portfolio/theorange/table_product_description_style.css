@@ -1,0 +1,88 @@
+#main 
+{
+  margin: 2.5% 0% 6% 0%;
+}
+#main #title1
+{
+  text-align: center;
+  font-size: 40px;
+  color: #fdeeb8;
+  letter-spacing:10px;
+  padding-bottom: 20px;
+}
+#main #boder
+{
+  border-color: #ff8400;
+  border-style: solid;
+  border-width: 4px 0 0 0;
+  width: 600px;
+  margin: auto;
+}
+#main #title2
+{
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 30px;
+  color: #fdeeb8;
+  letter-spacing:10px;
+  padding-top: 20px;
+}
+.boder2
+{
+  border-color: #fdeeb8;
+  border-style: solid;
+  border-width: 2px 0 0 0;
+  width: 450px;
+  margin: -7px auto 0 auto;
+}
+#br_title1{
+  display: none;
+}
+
+figure{
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  margin: 30px auto 30px auto;
+  box-shadow: 0px 0px 20px;
+}
+
+.produc_img{
+  width: 300px;
+  height: 300px;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 2px;
+  text-align: center;
+}
+
+figcaption{
+  padding: 20px;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 2px;
+  letter-spacing: 2px;
+  color: #fdeeb8;
+}
+figcaption h3{
+  font-size: 30px;
+  color: #ff8400;
+}
+
+@media screen and (max-width: 900px)
+{ #title1{ font-size: 30px;}
+  #title2{ font-size: 26px;}
+  #boder{ width: 95%;}
+}
+
+@media screen and (max-width: 600px)
+{ #title1{ font-size: 26px; letter-spacing: 4px; line-height: 45px;}
+  #title2{ letter-spacing: 0px; font-size: 20px;}
+}
+
+@media screen and (max-width: 820px)
+{ #main #boder{ width: 95%;}
+  figure {flex-direction: column; width: 90%;}
+  .boder2 { width: 98%;}
+  .produc_img{ width: auto;}
+}

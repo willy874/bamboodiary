@@ -1,0 +1,150 @@
+* { margin: 0; padding: 0;}
+
+body{ 
+  color: #fff;
+  background-color: #000;
+  background-image:url(img/background.jpg);
+  background-repeat: repeat-x;
+  font-family: Helvetica, Arial, STHeiti, "Microsoft JhengHei", 微軟正黑體, sans-serif;
+}
+
+/*header*/
+
+header{ 
+  width: 100%;
+}
+
+#nav{ 
+  width: 95%;
+  height: auto;
+  margin: 0px 10px;
+  display: block;
+}
+
+#LOGO{
+  display: none;
+}
+
+#nav_ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 0px 3px 10px;
+}
+
+#showMenu { 
+  margin-top: 10px;
+  font-size: 24px;
+  padding: 10px;
+  display: inline-block;
+  cursor: pointer; 
+}
+
+#nav_ul li{
+  list-style-type: none;
+}
+
+#nav h2{ 
+  font-family: 標楷體;
+  font-size: 24px;
+  cursor: pointer;
+  display: display: block;   
+  background: transparent;
+  color: #fff;
+  text-align: center; 
+  border-bottom: 1px dotted gray;
+  padding: 10px 15px 5px 15px;
+}
+
+
+/*nav list*/
+#nav_menu {
+  width: 95%;
+  height: auto;
+  margin: 0px 10px;
+}
+#menu_area {
+  border-color: #fff;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 0px 3px 20px;
+}
+#menu_benner {
+  height: auto;
+  padding: 10px;
+  margin: auto;
+}
+#menu_benner p {
+  font-size: 20px;
+}
+
+#menu_area ul {
+  margin: 0;
+  width: 100%;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#menu_area li {
+  list-style-type: none;
+}
+#nav_menu a {
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 標楷體;
+  font-size: 24px;
+  display: block;   
+  background: transparent;
+  color: #fff;
+  text-align: center; 
+  border-bottom: 1px dotted gray;
+  padding: 10px 15px 5px 15px;
+}
+#nav_menu li:hover{
+  background-color: #ff8400;
+  color: #000;
+}
+
+#menu_benner_title1{ letter-spacing: 10px; padding: 40px 0 20px 0; font-size: 20px; text-align: center; color: #fdeeb8;}
+#menu_benner_boder{ border-color: #ff8400; border-style: solid; border-width: 4px 0 0 0; width: 95%; margin: auto;}
+#menu_benner_title2{letter-spacing: 10px; padding: 20px 0 40px 0; font-size: 20px; text-align: center; color: #fdeeb8;}
+#table_about_the_company{ }
+#table_unmanned_store{ }
+#table_cooperation_process{  }
+#table_connection{ }
+
+/*footer*/
+
+footer { width: 100%; }
+
+#footer_main {
+  background-image: url(img/footer_background.jpg);
+  background-repeat: repeat-x;
+  display: flex;
+  justify-content: space-around;
+  margin: -10px auto;
+}
+
+#font_text ul{
+  margin-top: 100px;
+  margin-bottom: 20px;
+  padding: 6%;
+  font-size: 18px;
+  line-height: 40px;
+  text-decoration: none;
+  list-style-type: none;
+}
+.footer_text_ul{ display: inline;}
+#footer_QR{ display: none;}
+
+#Copyright{
+  text-align: center;
+  font-size: 12px;
+  margin-top: 30px;
+}
