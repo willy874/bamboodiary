@@ -1,0 +1,25 @@
+[{
+    "src":"./images/collection/theorange2.jpg",
+    "href":"https://bamboodiary.com/collection/theorange2/",
+    "header":"橙色國際官網",
+    "text":"目前線上營運橙色國際有限公司的網站，採用Float排版。",
+    "type":"website"
+},{
+    "src":"./images/collection/tchmice.jpg",
+    "href":"http://www.tchmice.com.tw/",
+    "header":"臺中會展網",
+    "text":"與後端工程師、UI設計師合作開發，全站基於Bootstrap4框架開發，主負責畫面切版。符合無障礙標準開發",
+    "type":"website"
+},{
+    "src":"./images/collection/uddgov.jpg",
+    "href":"http://www.udd.gov.taipei/",
+    "header":"都市發展局中文網站",
+    "text":"全站為舊都發局網資料轉移延伸開發，與後端工程師合作建置完整MVC架構，大量採用模組式開發，在無完整設計稿情況下敏捷式開發，逐步修整每一細節。",
+    "type":"website"
+},{
+    "src":"./images/collection/optoma.jpg",
+    "href":"https://bamboodiary.com/collection/Optoma/",
+    "header":"奧圖碼英文網站",
+    "text":"全站用webpack開發，採用前後端分離手法串聯資料，前端先行與UI合作建構再後期串接，全程遠端配和搭建。",
+    "type":"website"
+}]
