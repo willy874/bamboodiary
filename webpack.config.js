@@ -3,6 +3,7 @@ const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
 const WebpackModules = require('webpack-modules')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry:{ 
@@ -10,9 +11,8 @@ module.exports = {
     },
     devtool: 'source-map',
     output: {
-        path: path.resolve(__dirname, 'dist', 'js'),
-        filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        filename: './js/[name].bundle.js',
         publicPath: '/',
         libraryTarget: 'var',
         library: '[name]'
@@ -28,6 +28,9 @@ module.exports = {
     plugins: [
             new CleanWebpackPlugin(),
             new WebpackModules(),
+            new MiniCssExtractPlugin({
+                filename: "css/main.css",
+            })
         ],
         module: {
             rules: [{
@@ -42,18 +45,25 @@ module.exports = {
                     }
                 ]
             },{
-                test: /\.(ttf|eot|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url-loader',
-                options: {
-                  limit: 50000,
-                  mimetype: 'application/font-woff',
-                  name: './fonts/[name].[ext]',
-                },
-            }, {
-                test: /\.(png|svg|jpg|gif)$/,
+                test: /\.(scss|sass)$/,
                 use: [
-                    'file-loader'
-                ]
+                    MiniCssExtractPlugin.loader,
+                    "css-loader", 
+                    "sass-loader" 
+                ],
+            }, {
+                test: /\.(woff|woff2|eot|ttf|otf)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader',
+            }, {
+                test: /\.(png|svg|jpg|gif|webp)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader',
+                // use:[{
+                //     loader: 'url-loader',
+                //     options: {
+                //         name: '[hash].[ext]',
+                //         outputPath: 'assets',
+                //     }
+                // }]
             }, {
                 test: /\.js$/,
                 exclude: /(node_modules)/,
