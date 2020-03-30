@@ -28,17 +28,17 @@
                         font-weight: bolder;
                         letter-spacing: 0.125rem;
                         @include stretched;
-                        &::before{
-                            content: '';
-                            position: absolute;
-                            right: 3rem;
-                            top: 50%;
-                            font-size: 0.75rem;
-                            transform: translateY(-50%);
-                            display: block;
-                            width: 60px;
-                            animation: content-animate 1.5s infinite linear;
-                        }
+                        // &::before{
+                        //     content: '';
+                        //     position: absolute;
+                        //     right: 3rem;
+                        //     top: 50%;
+                        //     font-size: 0.75rem;
+                        //     transform: translateY(-50%);
+                        //     display: block;
+                        //     width: 60px;
+                        //     animation: content-animate 1.5s infinite linear;
+                        // }
                     }
                     &#{--grow}{
                         flex-grow: 1;

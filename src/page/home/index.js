@@ -8,12 +8,23 @@ export default class Home {
     }
     oncreate(vnode){
         document.main = vnode.dom
-        fetch('./dist/data/portfolio.json').then((response) => {
+        fetch('./data/portfolio.json').then((response) => {
             response.json().then((data)=> {
+                console.log(data)
                 vnode.attrs.model.portfolio = data
                 m.redraw()
             })
         })
+        fetch('./data/article.json').then((response) => {
+            response.json().then((data)=> {
+                console.log(data)
+                vnode.attrs.model.article = data
+                m.redraw()
+            })
+        })
+    }
+    onupdate(vnode){
+        ///console.log(vnode.attrs.model.portfolio)
     }
     view(vnode){
         const {
@@ -24,7 +35,7 @@ export default class Home {
         const portfolio = model.portfolio
         const article = model.article
         return m('div',{
-            class: 'main home'
+            class: classNames('main','home')
         },[
             m('section.sec1',[
                 m('h2',[
@@ -114,7 +125,7 @@ export default class Home {
                             m('.sec2-row-col-btn',[
                                 m('button[type=button]',{
                                     onclick: ()=>{
-                                        m.route.set('/about')
+                                        control.routeSet('/about')
                                     }
                                 },'MORE')
                             ])
@@ -188,6 +199,9 @@ export default class Home {
                     },['建置中......'])
                 ])
             ]),
+            (article.blog.filter(item=>{
+                return item.type === 'blog'
+            }).length === 0)?
             m('section.sec4',{
                 id: 'blog'
             },[
@@ -230,7 +244,7 @@ export default class Home {
                         ])
                     }))
                 ])
-            ]),
+            ]): null,
         ])
     }
 

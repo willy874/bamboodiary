@@ -1,8 +1,7 @@
 import Layout from '../page/layout'
 import * as Page from '../page'
 
-export default {
-    node: [{
+export default [{
         name: '使用者資訊',
         link: '/user',
         page: Layout(Page.Home),
@@ -11,4 +10,3 @@ export default {
         link: '/setting',
         page: Layout(Page.Home),
     }]
-}

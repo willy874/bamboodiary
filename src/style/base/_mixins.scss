@@ -59,3 +59,23 @@
         background-color: rgba(0, 0, 0, 0);
     }
 }
+
+@mixin box-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@mixin absolute-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

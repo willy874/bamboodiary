@@ -5,10 +5,9 @@ export default class Header {
     constructor(vnode) {
         this.navbar = false
     }
-    oncreate() {}
-    animationCallback(target){
-
-        
+    oncreate(vnode){
+        const dom = vnode.dom.querySelectorAll('.page-switch')[0]
+        vnode.attrs.control.pageSwitchAnimate = dom
     }
     view(vnode) {
         const {
@@ -16,15 +15,19 @@ export default class Header {
             model,
             status
         } = vnode.attrs
+        console.log(control)
         return m('header', [
+            m('.page-switch.animateEnd'),
             m('h1', {
-                class: classNames('header_brand',{
+                class: classNames('header_brand', {
                     'active': this.navbar
                 }),
             }, [
                 m('a', {
-                    href: '#!/home',
-                    title: '回到首頁'
+                    title: '回到首頁',
+                    onclick: () => {
+                        control.routeSet('#!/home')
+                    }
                 }, [
                     m('img', {
                         class: 'before',
@@ -44,10 +47,7 @@ export default class Header {
             ]),
             m('div', {
                 class: classNames('header_container', {
-                    active: this.navbar,
-                    transitionend: (e)=>{
-                        console.log(e)
-                    }
+                    active: this.navbar
                 })
             }, [
                 m('div', {
@@ -69,7 +69,6 @@ export default class Header {
                         onclick: (e) => {
                             e.preventDefault()
                             this.navbar = (this.navbar) ? false : true;
-                            
                         }
                     }),
                 ]),
@@ -90,29 +89,28 @@ export default class Header {
                         class: classNames('header-main_navbar')
                     }, [
                         m('ul', {
-                                class: classNames('navbar_panel')
-                            },[
-                                control.mainNavbar.map(item => {
-                                    return m('li', {
-                                        class: classNames('navbar_panel-item')
-                                    }, [
-                                        m('a', {
-                                            class: classNames('navbar_panel-item-link','create'),
-                                            //href: `#!${item.link}`,
-                                            title: `連結至${item.name}頁`,
-                                            onclick:()=>{
-                                                this.navbar = false
-                                                setTimeout(()=>{
-                                                    m.route.set(item.link)
-                                                },300)
-                                            }
-                                        }, item.name)
-                                    ])
-                                }),
-                                m('li', {
-                                    class: classNames('navbar_panel-item--grow'),
-                                })
-                            ])
+                            class: classNames('navbar_panel')
+                        }, [
+                            control.mainNavbar.map(item => {
+                                return m('li', {
+                                    class: classNames('navbar_panel-item')
+                                }, [
+                                    m('a', {
+                                        class: classNames('navbar_panel-item-link', 'create'),
+                                        title: `連結至${item.name}頁`,
+                                        onclick: () => {
+                                            this.navbar = false
+                                            setTimeout(() => {
+                                                control.routeSet(item.link)
+                                            }, 300)
+                                        }
+                                    }, item.name)
+                                ])
+                            }),
+                            m('li', {
+                                class: classNames('navbar_panel-item--grow'),
+                            })
+                        ])
                     ]),
                     /******************************************************/
                     m('nav', {
