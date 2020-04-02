@@ -7,46 +7,29 @@ import HeaderNavbar from './header-navbar'
 //集中設定所有的 Route
 export default class Control {
     constructor() {
-        this.rootRoute = [{
+        const RootRoute = [{
             name: '首頁',
             link: '/home',
             page: Layout(Page.Home),
         }]
+        // this.node = <Array> => {'/route' : Component }  
         this.node = {
-            RootRoute: this.rootRoute,
+            RootRoute,
             MainNavbar,
             HeaderNavbar
         }
-        this.mainNavbar = MainNavbar
-        this.headerNavbar = HeaderNavbar
+        
     }
 
     route() {
         const route = {}
         const excludes = ['/resume']
-        // Object.keys(this.node).map(key => {
-        //     console.log('key',key)
-        //     if(excludes.every(exclude => exclude === key))return
-        //     const nodes = this.node[key]
-        //     console.log('node',nodes)
-        //     console.log('this.node',this.node)
-        //     nodes.forEach(node=>{
-        //         route[node.link] = node.page
-        //     })
-        //     console.log('route',route)
-        // })
-        // console.log('route',route)
-        this.rootRoute.map(item => {
-            if(excludes.every(exclude => exclude === item))return
-            route[item.link] = item.page
-        })
-        this.mainNavbar.map(item => {
-            if(excludes.every(exclude => exclude === item))return
-            route[item.link] = item.page
-        })
-        this.headerNavbar.map(item => {
-            if(excludes.every(exclude => exclude === item))return
-            route[item.link] = item.page
+        Object.keys(this.node).map(key => {
+            if(excludes.every(exclude => exclude === key))return
+            const nodes = this.node[key]
+            nodes.forEach(node=>{
+                route[node.link] = node.page
+            })
         })
         return route
     }

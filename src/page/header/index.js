@@ -15,7 +15,6 @@ export default class Header {
             model,
             status
         } = vnode.attrs
-        console.log(control)
         return m('header', [
             m('.page-switch.animateEnd'),
             m('h1', {
@@ -53,15 +52,9 @@ export default class Header {
                 m('div', {
                     class: classNames('header_container-btn')
                 }, [
-                    m('div', {
-                        class: classNames('header_container-btn-top')
-                    }),
-                    m('div', {
-                        class: classNames('header_container-btn-center')
-                    }),
-                    m('div', {
-                        class: classNames('header_container-btn-bottom')
-                    }),
+                    m('.header_container-btn-top'),
+                    m('.header_container-btn-center'),
+                    m('.header_container-btn-bottom'),
                     m('a', {
                         href: '#',
                         class: classNames('header_container-btn-a'),
@@ -91,7 +84,7 @@ export default class Header {
                         m('ul', {
                             class: classNames('navbar_panel')
                         }, [
-                            control.mainNavbar.map(item => {
+                            control.node.MainNavbar.map(item => {
                                 return m('li', {
                                     class: classNames('navbar_panel-item')
                                 }, [
@@ -117,7 +110,7 @@ export default class Header {
                         class: classNames('header-top_navbar')
                     }, [
                         m('ul',
-                            control.headerNavbar.map(item => {
+                            control.node.HeaderNavbar.map(item => {
                                 return m('li', {
                                     class: classNames('navbar_panel-item')
                                 }, [
