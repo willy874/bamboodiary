@@ -4,27 +4,6 @@ import TabNavbar from '../component/tab-navbar'
 
 export default class Home {
     constructor(vnode){
-
-    }
-    oncreate(vnode){
-        document.main = vnode.dom
-        fetch('./data/portfolio.json').then((response) => {
-            response.json().then((data)=> {
-                console.log(data)
-                vnode.attrs.model.portfolio = data
-                m.redraw()
-            })
-        })
-        fetch('./data/article.json').then((response) => {
-            response.json().then((data)=> {
-                console.log(data)
-                vnode.attrs.model.article = data
-                m.redraw()
-            })
-        })
-    }
-    onupdate(vnode){
-        ///console.log(vnode.attrs.model.portfolio)
     }
     view(vnode){
         const {
@@ -151,7 +130,8 @@ export default class Home {
                     ]),
                     m('.sec3_website-row',portfolio.filter(item=>{
                         return item.type === 'website'
-                    }).map(item=>{
+                    }).map((item,index)=>{
+                        if(index >= 4) return
                         return m('div',{
                             class: classNames('sec3_website-row-col')
                         },[
@@ -185,7 +165,8 @@ export default class Home {
                     ]),
                     m('.sec3_singlepage-row',portfolio.filter(item=>{
                         return item.type === 'singlepage'
-                    }).map(item=>{
+                    }).map((item,index)=>{
+                        if(index >= 6) return
                         return m('div',{
                             class: classNames('sec3_singlepage-row-col')
                         },[])

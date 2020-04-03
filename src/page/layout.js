@@ -13,9 +13,7 @@ class LayoutPage {
             model,
             status
         } = vnode.attrs
-        return m('div',{
-            class: 'body'
-        },[
+        return m('.body',[
             m(Header,{
                 control,
                 model,
@@ -35,7 +33,7 @@ class LayoutPage {
                 control,
                 model,
                 status
-            },'dialog'),
+            },'dialog')
         ])
     }
 }
@@ -47,6 +45,9 @@ export default function Layout(Page){
             this.control = createApp.control
             this.model = createApp.model
             this.status = createApp.status
+        }
+        oninit(vnode){
+            this.model.modelCreate()
         }
         view(vnode){
             return m(LayoutPage,{

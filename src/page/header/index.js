@@ -6,8 +6,7 @@ export default class Header {
         this.navbar = false
     }
     oncreate(vnode){
-        const dom = vnode.dom.querySelectorAll('.page-switch')[0]
-        vnode.attrs.control.pageSwitchAnimate = dom
+        vnode.attrs.control.headerDom = vnode.dom
     }
     view(vnode) {
         const {
@@ -85,6 +84,7 @@ export default class Header {
                             class: classNames('navbar_panel')
                         }, [
                             control.node.MainNavbar.map(item => {
+                                if(control.exclude.every(exclude => exclude === item.link))return
                                 return m('li', {
                                     class: classNames('navbar_panel-item')
                                 }, [

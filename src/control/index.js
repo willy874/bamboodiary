@@ -18,14 +18,13 @@ export default class Control {
             MainNavbar,
             HeaderNavbar
         }
+        this.exclude = ['/resume']
         
     }
 
     route() {
         const route = {}
-        const excludes = ['/resume']
         Object.keys(this.node).map(key => {
-            if(excludes.every(exclude => exclude === key))return
             const nodes = this.node[key]
             nodes.forEach(node=>{
                 route[node.link] = node.page
@@ -34,7 +33,7 @@ export default class Control {
         return route
     }
     routeSet(route) {
-        const dom = this.pageSwitchAnimate
+        const dom = this.headerDom.querySelectorAll('.page-switch')[0]
         dom.classList.remove('animateEnd')
         dom.classList.add('animateStart')
         dom.addEventListener('transitionend', () => {
@@ -42,6 +41,7 @@ export default class Control {
             dom.classList.remove('animateStart')
             dom.classList.add('animateEnd')
         })
+        
     }
 
 }
