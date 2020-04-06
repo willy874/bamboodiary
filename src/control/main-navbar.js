@@ -17,8 +17,8 @@ export default [{
         name: '履歷表',
         link: '/resume',
         page: Layout(Page.resume),
-    },{
-        name: '部落格',
-        link: '/blog',
-        page: Layout(Page.Home),
+    // },{
+    //     name: '部落格',
+    //     link: '/blog',
+    //     page: Layout(Page.Home),
     }]
