@@ -24,7 +24,10 @@ export default class Header {
                 m('a', {
                     title: '回到首頁',
                     onclick: () => {
-                        control.routeSet('#!/home')
+                        this.navbar = false
+                        setTimeout(() => {
+                            control.routeSet('#!/home')
+                        }, 300)
                     }
                 }, [
                     m('img', {
