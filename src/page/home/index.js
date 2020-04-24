@@ -160,24 +160,41 @@ export default class Home {
                             ])
                         ])
                     })),
-                    // m('.sec3-heading',[
-                    //     m('h3','Single Page')
-                    // ]),
-                    // m('.sec3_singlepage-row',portfolio.filter(item=>{
-                    //     return item.type === 'singlepage'
-                    // }).map((item,index)=>{
-                    //     if(index >= 6) return
-                    //     return m('div',{
-                    //         class: classNames('sec3_singlepage-row-col')
-                    //     },[])
-                    // })),
-                    // m('h3',{
-                    //     style:{
-                    //         color: '#333',
-                    //         textAlign: 'center',
-                    //         fontWeight: 'bold'
-                    //     }
-                    // },['建置中......'])
+                    m('.sec3-heading',[
+                        m('h3','Single Page')
+                    ]),
+                    m('.sec3_singlepage-row',portfolio.filter(item=>{
+                        return item.type === 'singlepage'
+                    }).map((item,index)=>{
+                        if(index >= 6) return
+                        return m('div',{
+                            class: classNames('sec3_website-row-col')
+                        },[
+                            m('div',{
+                                class: classNames('sec3_website-row-col-figure')
+                            },[
+                                m('figure',[
+                                    m('img',{
+                                        src: item.src,
+                                        alt: item.header
+                                    }),
+                                    m('mask',{
+                                        class: classNames('sec3_website-row-col-figure-mask')
+                                    },[
+                                        m('a[target=_blank]',{
+                                            href: item.href,
+                                            title: `連結至${item.header}(另開新視窗)`
+                                        },[
+                                            m('span',item.text)
+                                        ])
+                                    ])
+                                ]),
+                                m('figcaption',[
+                                    m('h4',item.header)
+                                ]),
+                            ])
+                        ])
+                    }))
                 ])
             ]),
             (article.blog.filter(item=>{

@@ -18,8 +18,14 @@
     "type":"website"
 },{
     "src":"./images/collection/optoma.jpg",
-    "href":"https://bamboodiary.com/collection/Optoma/",
+    "href":"https://www-dev.optoma.com/cm2/",
     "header":"奧圖碼英文網站",
     "text":"全站用webpack開發，採用前後端分離手法串聯資料，前端先行與UI合作建構再後期串接，全程遠端配和搭建。",
     "type":"website"
+},{
+    "src":"./images/collection/react-cms.jpg",
+    "href":"https://bamboodiary.com/collection/react-cms/",
+    "header":"React練習",
+    "text":"採用React開發，參考sqldbm SQLServer介面建置來做UI，額外在CSS和動畫做了優化。",
+    "type":"singlepage"
 }]
