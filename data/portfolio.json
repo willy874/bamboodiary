@@ -1,6 +1,6 @@
 [{
     "src":"./images/collection/theorange2.jpg",
-    "href":"https://bamboodiary.com/collection/theorange2/",
+    "href":"https://bamboodiary.com/portfolio/theorange2/",
     "header":"橙色國際官網",
     "text":"目前線上營運橙色國際有限公司的網站，採用Float排版。",
     "type":"website"
@@ -24,7 +24,7 @@
     "type":"website"
 },{
     "src":"./images/collection/react-cms.jpg",
-    "href":"https://bamboodiary.com/collection/react-cms/",
+    "href":"https://bamboodiary.com/portfolio/react-cms/",
     "header":"React練習",
     "text":"採用React開發，參考sqldbm SQLServer介面建置來做UI，額外在CSS和動畫做了優化。",
     "type":"singlepage"
