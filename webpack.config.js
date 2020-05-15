@@ -6,6 +6,7 @@ const WebpackModules = require('webpack-modules')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
+    mode: 'production',
     entry:{ 
         dist:'./src/entry.js'
     },

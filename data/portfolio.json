@@ -28,4 +28,10 @@
     "header":"React練習",
     "text":"採用React開發，參考sqldbm SQLServer介面建置來做UI，額外在CSS和動畫做了優化。",
     "type":"singlepage"
+},{
+    "src":"./images/collection/mithril-component.jpg",
+    "href":"https://bamboodiary.com/portfolio/mithril-component/",
+    "header":"Component",
+    "text":"採用Mithril開發的Component，開發自由而豐富的接口，讓未來的專案使用產生更多的可能性與更好的效率。",
+    "type":"singlepage"
 }]
