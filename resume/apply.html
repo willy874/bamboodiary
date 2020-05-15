@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>線上申請</title> integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.rent.gov.taipei/css/site.css" />
+    <link rel="stylesheet" href="https://www.rent.gov.taipei/css/apply.css">
+</head>
+
+<body>
+    <div id="loading">
+        <div id="imgPosition" class="d-flex justify-content-center">
+            <img id="loading-image" src=https://www.rent.gov.taipei/images/loading.gif alt="Loading..." />
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <header class="header header-sticky">
+            <div class="header-bottom menu-center">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-white w-100 p-0  align-items-end">
+                        <div class="navbar-brand d-inline-flex px-0" style="padding-top:11px; padding-bottom:10px;">
+                            <div class="logo">
+                                <a href="#" title="回首頁"><img src="https://www.rent.gov.taipei/images/logo.png"
+                                        alt="安心樂租網LOGO" style="height:54px; width:125px;"></a>
+                            </div>
+                            <a href="/">
+                                <div class="pl-2 d-flex">
+                                    <div class="d-none d-xl-block">
+                                        <span class="h6 mb-0 d-block">臺北市政府</span>
+                                        <span class="h4 mb-0 d-block">安心樂租網</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="h-100 d-flex align-content-center" style="padding-top:8px; padding-bottom:12px;">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation"
+                                onclick="this.classList.toggle('active')">
+                                <span class="navbar-icon"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto align-items-lg-end align-items-start">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">焦點資訊</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">我要找房 </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">所有房源</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">為您服務</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">常見問題</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="d-lg-block d-none ml-3 mb-2">
+                            <div class="header-user pb-2">
+                                <a href="#" class="user-toggle">
+                                    <i class="pe-7s-user"></i>
+                                    <span class="d-none d-sm-inline-flex align-items-end">會員中心<i
+                                            class="pe-7s-user px-2"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="page-banner-section section" style="background-image: url(https://www.rent.gov.taipei/images/bg/news-banner.jpg)">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="page-banner-title">會員中心</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav aria-label="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">
+                        <a href="/">首頁</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page"> 會員中心 </li>
+                </ol>
+            </div>
+        </nav>
+        <div
+            class="property-section section bg-gray pt-40 pt-lg-30 pt-md-25 pt-sm-20 pt-xs-15 pb-50 pb-lg-40 pb-md-35 pb-sm-30 pb-xs-25">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-12 mb-2">
+                        <div class="bg-theme d-flex justify-content-between px-3 py-2">
+                            <div class="text-white font-weght-bold"> 會員中心 </div>
+                            <a class="d-block text-white" href="#">
+                                <span class="align-middle">登出</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-12 mb-sm-50 mb-xs-50 mr-md-1 pt-2">
+                        <ul class="myaccount-tab-list nav bg-white">
+                            <li>
+                                <div class="d-flex px-3 py-2 align-items-center">
+                                    <div>
+                                        <i class="pe-7s-user" style="font-size: 5rem;"></i>
+                                    </div>
+                                    <div class="px-2">
+                                        <h3 id="user-name" style="font-size: 1.75rem;">&#x856D;&#x5B87;&#x7B19;</h3>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#ApplyOnline" data-toggle="tab"><i class="pe-7s-pen"></i>線上申請</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg col-12 ml-md-1 tab-inner" id="ApplyOnline">
+                        <div class="card rounded-0">
+                            <div class="col-12" id="apply-online"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer-section section">
+            <!--Footer Top start-->
+            <div class="footer-top section pt-40 pt-lg-35 pt-md-30 pt-sm-25 pt-xs-20 pb-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 mb-3 mb-lg-0 d-flex">
+                            <div class="d-flex d-lg-block justify-content-between flex-column flex-lg-row">
+                                <div class="py-2 d-flex flex-column">
+                                    <img class="mr-3" src="https://www.rent.gov.taipei/images/logo-footer.png"
+                                        alt="安心樂租網LOGO" style="height:86.4px;width:200px;">
+                                    <div class="d-inline-block d-lg-block" style="color: #D8D8D8;">
+                                        <span class="h5">臺北市政府</span>
+                                        <br>
+                                        <span class="h3">安心樂租網</span>
+                                    </div>
+                                </div>
+                                <div class="footer-social py-2">
+                                    <a href="#" title="分享給facebook的好友" target="_blank" class="facebook"><i
+                                            class="fa fa-facebook"></i></a>
+                                    <a href="#" title="分享給twitter的好友" target="_blank" class="twitter"><i
+                                            class="fa fa-twitter"></i></a>
+                                    <a href="#" title="分享給line的好友" target="_blank"
+                                        class="p-0 rounded-circle overflow-hidden">
+                                        <img src="https://www.rent.gov.taipei/images/icons/line.png"></a>
+                                </div>
+                            </div>
+                            <div class="d-lg-none d-flex flex-column justify-content-center ml-auto">
+                                <div class="text-center">
+                                    <a href="#" title="我的E政府" target="_blank">
+                                        <img class="my-3 img-fluid"
+                                            src="https://www.rent.gov.taipei/images/icons/gov.png" alt="GOV" />
+                                    </a>
+                                </div>
+                                <div class="text-center">
+                                    <a href="#" title="臺北市政府" target="_blank">
+                                        <img class="my-3 img-fluid"
+                                            src="https://www.rent.gov.taipei/images/icons/taipei.png" alt="Taipei" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 justify-content-lg-end justify-content-start text-lg-right text-left">
+                            <div class="d-flex justify-content-between flex-column">
+                                <div class="d-none d-lg-block">
+                                    <a href="#" title="我的E政府" target="_blank">
+                                        <img class="my-3 img-fluid"
+                                            src="https://www.rent.gov.taipei/images/icons/gov.png" alt="GOV" />
+                                    </a>
+                                    <a href="#" title="臺北市政府" target="_blank">
+                                        <img class="my-3 img-fluid"
+                                            src="https://www.rent.gov.taipei/images/icons/taipei.png" alt="Taipei" />
+                                    </a>
+                                </div>
+                                <div class="mt-5 mb-3 row justify-content-md-end justify-content-start no-gutters">
+                                    <a class="col-auto d-flex align-items-center ml-3" style="color: #CECECE;"
+                                        title="聯絡我們" href="#"><i class="fa fa-phone mx-1"></i><span>聯絡我們</span></a>
+                                    <a class="col-auto d-flex align-items-center ml-3" style="color: #CECECE;"
+                                        title="陳情窗口" href="#" target="_blank"><i
+                                            class="fa fa-envelope mx-1"></i><span>陳情窗口</span></a>
+                                    <a class="col-auto d-flex align-items-center ml-3" style="color: #CECECE;"
+                                        title="政府網站資料開放宣告" href="#" target="_blank"><i
+                                            class="fa fa-globe mx-1"></i><span class="ml-1">政府網站資料開放宣告</span></a>
+                                    <a class="col-auto d-flex align-items-center ml-3" style="color: #CECECE;"
+                                        title="隱私權及資訊安全政策" href="#" target="_blank"><i class="fa fa-book mx-1"></i><span
+                                            class="ml-1">隱私權及資訊安全政策</span></a>
+                                </div>
+                                <div>
+                                    <span style="color: #CECECE;">臺北市信義區市府路1號(南區) | 02-27208889 (代表號)</span>
+                                    <br />
+                                    <span style="color: #CECECE;">臺北市南京東路三段168號十八樓(中區辦公室) | 02-27772186轉0再轉2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Footer bottom start-->
+            <div class="footer-bottom section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center flex-column flex-md-row">
+                            <div class="copyright text-center d-flex align-items-end justify-content-center">
+                                <p class="mt-2 mt-md-0">
+                                    <span style="color:#959595;">臺北市政府都市發展局 <span style="color:#707070">版權所有 ©
+                                        </span></span>
+                                    <br class="d-inline-block d-xl-none">
+                                    <span style="font-size:0.9rem;color:#707070;">2019 Taipei City Government. <br
+                                            class="d-inline-block d-sm-none">All Rights Reserved.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLA-zszki1MbN8YF0ZihVabEFIX3VPY0A"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./js/apply.bundle.js"></script>
+    <script language="javascript" type="text/javascript">
+        // $(window).load(function() {
+        //     $('#loading').hide();
+        // });
+        window.onload = function () {
+            document.getElementById("loading").style.display = "none"
+        }
+        window.IsAuthenticated = "True"
+        window.loginUrl = `/citizen/Logon`
+        window.BASE_URL = ''
+        if (window.IsAuthenticated == "True") {
+            window.baseUrl = 'https://www.rent.gov.taipei'
+        }
+        else {
+            window.baseUrl = 'http://www.rent.gov.taipei'
+        }
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var placeholderElement = $('#modal-placeholder');
+            $('a[data-toggle="ajax-modal"]').click(function (event) {
+                event.preventDefault();
+                var url = $(this).data('url');
+                $.get(url).done(function (data) {
+                    placeholderElement.html(data);
+                    placeholderElement.find('.modal').modal('show');
+                });
+            });
+            window.LoginModal = function () {
+                $('#loginModal2').modal('show')
+            }
+            placeholderElement.on('click', '[data-save="modal"]', function (event) {
+                event.preventDefault();
+                var form = $(this).parents('.modal').find('form');
+                var actionUrl = form.attr('action');
+                var dataToSend = form.serialize();
+
+                $.post(actionUrl, dataToSend).done(function (data) {
+                    var newBody = $('.modal-body', data);
+                    placeholderElement.find('.modal-body').replaceWith(newBody);
+
+                    var isValid = (newBody.find('[name="IsValid"]').val() == 'True');
+                    if (isValid) {
+                        placeholderElement.find('.modal').modal('hide');
+                        window.location.href = '/citizen';
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        window.IdCard = 'A123456789'
+        window.userName = $('#user-name').text();
+    </script>
+    <script src="/test/apply.bundle.js?v=4hba3JMatKEFOPJDWIzs5Wk3K2yQNInqDEAdAexvD50"></script>
+</body>
+
+</html>

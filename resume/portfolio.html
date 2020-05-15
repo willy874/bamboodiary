@@ -1,42 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        body{
+        body {
             font-family: 'Noto Sans TC', sans-serif;
         }
-        .navbar-brand{
+
+        .navbar-brand {
             font-size: 1.75rem;
             letter-spacing: 0.25rem;
         }
-        .active .nav-link{
+
+        .active .nav-link {
             cursor: auto;
         }
-        .nav-link:hover{
+
+        .nav-link:hover {
             color: #fff !important;
         }
-        @media (max-width:992px){
-            .nav-link{
+
+        @media (max-width:992px) {
+            .nav-link {
                 padding-top: 1rem;
                 padding-bottom: 1rem;
             }
         }
-        a{
+
+        a {
             color: #fff;
             font-size: 1.125rem;
         }
-        a:hover{
+
+        a:hover {
             color: #ccc;
+        }
+
+        figure img {
+            transition: all 0.3s;
+        }
+
+        figure:hover img {
+            transform: translateY(-3px);
+            box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
+
 <body>
     <header class="bg-dark px-5" style="position: fixed;top:0; left:0;right: 0; z-index: 100">
         <nav class="navbar navbar-expand-sm navbar-dark align-items-center justify-content-between">
@@ -62,15 +80,138 @@
     <div style="background-color:#f6f6ff;padding-top: 74px;">
         <div class="container py-5">
             <div class="row">
-                <div class="col-lg-3">
-                    <img src="../images/collection/optoma.jpg" style="width:100%;">
+
+                <div class="col-lg-6 py-3 order-lg-1">
+                    <figure class="text-center">
+                        <a href="http://www.tchmice.com.tw/" target="_blank">
+                            <img src="../images/collection/tchmice.jpg" style="width:100%;border-radius: 0.5rem;">
+                        </a>
+                        <figcaption class="h5 text-dark pt-2">臺中會展網</figcaption>
+                    </figure>
                 </div>
-                <div class="col-lg-9"></div>
+                <div class="col-lg-6 py-3 order-lg-2">
+                    <ul class="text-dark" style="letter-spacing: 1px;line-height:1.75rem;font-size: 1.125rem;">
+                        <li>雙語網站</li>
+                        <li>符合無障礙A等級標章</li>
+                        <li>Banner採用SVG動畫</li>
+                        <li>使用jQuery完成使用者行為</li>
+                        <li>配合設計完成切版，配合後端串接頁面</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="row">
+                
+                <div class="col-lg-6 py-3 order-lg-2">
+                    <figure class="text-center">
+                        <a href="https://www.udd.gov.taipei/" target="_blank">
+                            <img src="../images/collection/uddgov.jpg" style="width:100%;border-radius: 0.5rem;">
+                        </a>
+                        <figcaption class="h5 text-dark pt-2">臺北市都發局局網</figcaption>
+                    </figure>
+                </div>
+                <div class="col-lg-6 py-3 order-lg-1">
+                    <ul class="text-dark" style="letter-spacing: 1px;line-height:1.75rem;font-size: 1.125rem;">
+                        <li>串接GoogleMapsAPI</li>
+                        <li>符合無障礙A等級標章</li>
+                        <li>頁面模組化開發</li>
+                        <li>使用jQuery完成使用者行為</li>
+                        <li>配合設計完成切版，配合後端串接頁面</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-6 py-3">
+                    <figure class="text-center order-lg-2">
+                        <a href="https://www-dev.optoma.com/cm2/" target="_blank">
+                            <img src="../images/collection/optoma.jpg" style="width:100%;border-radius: 0.5rem;">
+                        </a>
+                        <figcaption class="h5 text-dark pt-2">奧圖碼英文網</figcaption>
+                    </figure>
+                </div>
+                <div class="col-lg-6 py-3 order-lg-1">
+                    <ul class="text-dark" style="letter-spacing: 1px;line-height:1.75rem;font-size: 1.125rem;">
+                        <li>串接YoutubeAPI</li>
+                        <li>採用webpack建構ES6環境開發</li>
+                        <li>應用CSS完成頁面動畫</li>
+                        <li>使用jQuery完成使用者行為</li>
+                        <li>採遠端合作開發</li>
+                        <li>配合設計完成切版，前後端分離串接頁面</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-lg-6 py-3 order-lg-2">
+                    <figure class="text-center">
+                        <a href="./apply.html" target="_blank">
+                            <img src="../images/collection/apply.jpg" style="width:100%;border-radius: 0.5rem;">
+                        </a>
+                        <figcaption class="h5 text-dark pt-2">線上申請系統</figcaption>
+                    </figure>
+                </div>
+                <div class="col-lg-6 py-3 order-lg-1">
+                    <ul class="text-dark" style="letter-spacing: 1px;line-height:1.75rem;font-size: 1.125rem;">
+                        <li>複雜的條件篩選報名系統</li>
+                        <li>採用webpack建構mithril框架環境開發</li>
+                        <li>應用模組套件完成UI</li>
+                        <li>限期敏捷式開發完成</li>
+                        <li>前後端分離串接SPA頁面</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 py-3 order-lg-1">
+                    <figure class="text-center" target="_blank">
+                        <a href="https://bamboodiary.com/portfolio/react-cms/" target="_blank">
+                            <img src="../images/collection/react-cms.jpg" style="width:100%;border-radius: 0.5rem;">
+                        </a>
+                        <figcaption class="h5 text-dark pt-2">React練習</figcaption>
+                    </figure>
+                </div>
+                <div class="col-lg-6 py-3 order-lg-2">
+                    <ul class="text-dark" style="letter-spacing: 1px;line-height:1.75rem;font-size: 1.125rem;">
+                        <li>練習以React來切版</li>
+                        <li>應用生命週期來完成動畫</li>
+                        <li>使用Redua執行全域變數傳遞</li>
+                        <li>自定義webpack建構</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-lg-6 py-3 order-lg-2">
+                    <figure class="text-center">
+                        <a href="https://bamboodiary.com/portfolio/mithril-component/" target="_blank">
+                            <img src="../images/collection/mithril-component.jpg"
+                                style="width:100%;border-radius: 0.5rem;">
+                        </a>
+                        <figcaption class="h5 text-dark pt-2">自製Component</figcaption>
+                    </figure>
+                </div>
+                <div class="col-lg-6 py-3 order-lg-1">
+                    <ul class="text-dark" style="letter-spacing: 1px;line-height:1.75rem;font-size: 1.125rem;">
+                        <li>製作豐富接口的Mithril開源UI組件庫</li>
+                        <li>編寫技術文件以提供團隊使用</li>
+                        <li>進行縝密條件判斷來飲用參數</li>
+                        <li>自定義rollup建構</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
