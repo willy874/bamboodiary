@@ -1,0 +1,15 @@
+{
+  "typeAcquisition": {
+    "exclude": ["dotenv", "vue3-i18n"]
+  },
+  "allowJS": true,
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "paths": {
+      "~/*": ["./*"],
+      "@base/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

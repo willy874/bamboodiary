@@ -1,0 +1,35 @@
+const fs = require('fs').promises
+const path = require('path')
+const prettier = require('prettier')
+const compilerPlugin = require('../plugins/database-model-base')
+
+module.exports = function (ops) {
+  return Promise.all([
+    Object.keys(ops.schema).map(async modelName => {
+      const { output, root, overwrite } = ops
+      const { ConverDashFilename } = ops.methods
+      const filename = ConverDashFilename(modelName, 'js')
+      const writeString = prettier.format(compilerPlugin(ops, modelName), {
+        semi: false,
+        singleQuote: true,
+        arrowParens: 'avoid',
+        parser: 'babel',
+      })
+      const folders = await fs.readdir(path.join(ops.root, output.databaseModel))
+      const fsWriteFile = writePath => fs.writeFile(path.join(root, writePath, filename), writeString)
+      if (!folders.includes(filename)) {
+        return fsWriteFile(output.databaseModel).then(() => {
+          fsWriteFile(path.join.apply(path, ['auto', 'model', 'database']))
+          console.log(`Create ${filename} Database Model success.`.green)
+        })
+      } else {
+        if (overwrite) {
+          return fsWriteFile(output.databaseModel).then(() => {
+            fsWriteFile(path.join.apply(path, ['auto', 'model', 'database']))
+            console.log(`Overwrite ${filename} Database Model success.`.green)
+          })
+        }
+      }
+    }),
+  ])
+}

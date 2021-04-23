@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'mixin';
+@import 'utilities';
+@import 'components/navbtn';
+
+#app {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+#layout {
+}
+
+#backend {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

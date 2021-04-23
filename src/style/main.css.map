@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,IAAI,CAAC;EACH,WAAW,EAAE,4BAA4B;CAC1C;;AAKD,AAAA,QAAQ,CAAC;EACP,MAAM,EAAE,KAAK;EACb,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;CACvB",
+    "sources": [
+        "main.scss",
+        "components/_navbtn.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
