@@ -1,9 +1,9 @@
-const root = process.env.VITE_ROOT
+const root = process.env.ROOT
 
 module.exports = {
   root,
-  inputFolder: [root, 'src', 'assets', 'svg'],
-  outputFolder: [root, 'src', 'plugins', 'icon', 'pattern'],
+  inputFolder: [root, 'auto', 'svg', 'assets'],
+  outputFolder: [root, 'auto', 'svg', 'pattern'],
   svgRules: {
     allows: ['xmlns', 'xlink', 'viewBox'],
     attrs: {

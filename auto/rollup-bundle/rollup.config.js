@@ -2,17 +2,19 @@ import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import postcss from 'rollup-plugin-postcss'
 import cleaner from 'rollup-plugin-cleaner'
+import loaderJson from '@rollup/plugin-json'
 
 export default {
-  input: 'plugins/index.js',
+  input: 'function/index.js',
   output: {
-    file: 'src/plugins/bundle/index.js',
+    file: 'rollup-bundle/dist/index.js',
     format: 'esm',
   },
   plugins: [
     cleaner({
       targets: ['./src/plugins/bundle/'],
     }),
+    loaderJson(),
     resolve(),
     postcss({
       minimize: true,

@@ -1,10 +1,6 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var converBigHump = function converBigHump(name, join) {
   if (typeof name !== 'string') {
-    console.log('[converBigHump] Is name is not a string.');
+    console.log('[converBigHump] Name is not a string.');
   }
   const ext = (() => {
     const a1 = name.split('.');
@@ -91,7 +87,7 @@ var vscode = getCjsExportFromNamespace(settings$1);
 var spaces = function (count) {
   const space =
     vscode && (vscode['editor.tabSize'] || vscode['prettier.tabWidth'])
-      ? vscode['editor.tabSize'] || vscode['prettier.tabWidth']
+      ? vscode['editor.tabSize']
       : 4;
   return new Array(space * count).fill(' ').join('')
 };
@@ -107,8 +103,5 @@ var _function_2 = _function.ConverDashFilename;
 var _function_3 = _function.CsvJson;
 var _function_4 = _function.Spaces;
 
-exports.ConverBigHump = _function_1;
-exports.ConverDashFilename = _function_2;
-exports.CsvJson = _function_3;
-exports.Spaces = _function_4;
-exports.default = _function;
+export default _function;
+export { _function_1 as ConverBigHump, _function_2 as ConverDashFilename, _function_3 as CsvJson, _function_4 as Spaces };

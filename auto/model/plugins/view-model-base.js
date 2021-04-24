@@ -1,5 +1,5 @@
-const uniq = require('lodash/uniq')
-const concat = require('lodash/concat')
+const _uniq = require('lodash/uniq')
+const _concat = require('lodash/concat')
 
 module.exports = function (ops, modelName) {
   // const { ConverDashFilename, Spaces } = ops.methods
@@ -14,8 +14,8 @@ module.exports = function (ops, modelName) {
     const arr = []
 
     if (model.extends !== 'DataModel') arr.push(model.extends)
-    return uniq(
-      concat(
+    return _uniq(
+      _concat(
         arr,
         model.tebles.filter(table => isModel(table.type)).map(t => t.type),
         model.tebles.filter(table => isModel(table.itemType)).map(t => t.itemType)

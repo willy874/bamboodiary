@@ -5,7 +5,6 @@ const path = require('path')
 const prettier = require('prettier')
 const parse5 = require('parse5')
 const config = require('./config')
-const sp = require('../function/spaces')
 const createIndex = require('../create-index/create-webpack')
 
 const strFilter = str => {
@@ -49,11 +48,11 @@ fs.readdir(path.resolve.apply(path, config.inputFolder)).then(filenames => {
             if (dom.tag === 'svg') {
               Object.keys(dom.attrs).forEach(key => {
                 if (config.svgRules.allows.includes(key)) {
-                  svgAttr.push(`\n${sp(2)}${key}: '${dom.attrs[key]}'`)
+                  svgAttr.push(`\n${key}: '${dom.attrs[key]}'`)
                 }
               })
               Object.keys(config.svgRules.attrs).forEach(key => {
-                svgAttr.push(`\n${sp(2)}${key}: '${config.svgRules.attrs[key]}'`)
+                svgAttr.push(`\n${key}: '${config.svgRules.attrs[key]}'`)
               })
             }
             if (config.patternRules.map(p => p.name).includes(dom.tag)) {
@@ -61,13 +60,13 @@ fs.readdir(path.resolve.apply(path, config.inputFolder)).then(filenames => {
               pattern.push(
                 (() => {
                   if (dom.tag === 'text') {
-                    return `\n${sp(2)}<text${Object.keys(dom.attrs || {})
+                    return `\n<text${Object.keys(dom.attrs || {})
                       .map(key => {
                         return tagData.allows.includes(key) ? ` ${key}="${strFilter(dom.attrs[key])}"` : ''
                       })
                       .join('')}>${dom.children.map(child => child.text).join('')}</text>`
                   }
-                  return `\n${sp(2)}<${dom.tag}${Object.keys(dom.attrs || {})
+                  return `\n<${dom.tag}${Object.keys(dom.attrs || {})
                     .map(key => {
                       return tagData.allows.includes(key) ? ` ${key}="${strFilter(dom.attrs[key])}"` : ''
                     })
@@ -79,13 +78,13 @@ fs.readdir(path.resolve.apply(path, config.inputFolder)).then(filenames => {
           const fsString =
             '' +
             'export default {' +
-            `\n${sp(1)}mount: '.icon-${'add'}',` +
-            `\n${sp(1)}attrs: {` +
+            `\nmount: '.icon-${'add'}',` +
+            `\nattrs: {` +
             svgAttr.join(',') +
-            `\n${sp(1)}},` +
-            `\n${sp(1)}path: \`` +
+            `\n},` +
+            `\npath: \`` +
             pattern.join('') +
-            `\n${sp(1)}\`` +
+            `\n\`` +
             '\n}\n'
           const newFilename = filename.replace('svg', 'js')
           const writeString = prettier.format(fsString, {

@@ -20,13 +20,23 @@ module.exports = function (ops) {
       if (!folders.includes(filename)) {
         return fsWriteFile(output.databaseModel).then(() => {
           fsWriteFile(path.join.apply(path, ['auto', 'model', 'database']))
-          console.log(`Create ${filename} Database Model success.`.green)
+          console.log(
+            'Create'.green,
+            filename.yellow,
+            `Database Model success.`.green,
+            path.join(root, output.databaseModel, filename).blue
+          )
         })
       } else {
         if (overwrite) {
           return fsWriteFile(output.databaseModel).then(() => {
             fsWriteFile(path.join.apply(path, ['auto', 'model', 'database']))
-            console.log(`Overwrite ${filename} Database Model success.`.green)
+            console.log(
+              'Overwrite'.green,
+              filename.yellow,
+              `Database Model success.`.green,
+              path.join(root, output.databaseModel, filename).blue
+            )
           })
         }
       }

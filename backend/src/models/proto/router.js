@@ -1,6 +1,7 @@
 import { v4 as uuid } from 'uuid'
-import * as Views from '../views'
-import { ImageModel, DataModel } from '../models'
+import * as Views from '@base/views'
+import DataModel from './data'
+import { ImageModel } from '../data'
 
 export default class RouterModel extends DataModel {
   constructor(args) {

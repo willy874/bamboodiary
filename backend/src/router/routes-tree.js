@@ -1,10 +1,11 @@
-import RouterModel from './router'
-// import i18n from '../plugins/i18n'
+import RouterModel from '@base/models/proto/router'
+import i18n from '@base/plugins/i18n'
 
-// const i18nMsg = i18n.messages[i18n.getLocale()]
+const i18nMsg = i18n.messages[i18n.getLocale()]
 
 /**
- * @param {Boolean} meta.navHidden
+ * @property {String} path
+ * @property {Boolean} meta.navHidden
  */
 const routes = [
   {

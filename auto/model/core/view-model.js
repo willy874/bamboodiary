@@ -20,13 +20,23 @@ module.exports = function (ops) {
       if (!folders.includes(filename)) {
         return fsWriteFile(output.viewModel).then(() => {
           fsWriteFile(path.join.apply(path, ['auto', 'model', 'view']))
-          console.log(`Create ${filename} View Model success.`.green)
+          console.log(
+            'Create'.green,
+            filename.yellow,
+            `View Model success.`.green,
+            path.join(root, output.viewModel, filename).blue
+          )
         })
       } else {
         if (overwrite) {
           return fsWriteFile(output.viewModel).then(() => {
             fsWriteFile(path.join.apply(path, ['auto', 'model', 'view']))
-            console.log(`Overwrite ${filename} View Model success.`.green)
+            console.log(
+              'Overwrite'.green,
+              filename.yellow,
+              `View Model success.`.green,
+              path.join(root, output.viewModel, filename).blue
+            )
           })
         }
       }

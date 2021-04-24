@@ -1,7 +1,7 @@
 const path = require('path')
+const prettier = require('prettier')
 const fs = require('fs').promises
-const converBigHump = require('../function/conver-big-hump')
-const sp = require('../function/spaces')
+const { ConverBigHump } = require('../function')
 
 module.exports = function (folder, suffix = '') {
   return new Promise(resolve => {
@@ -9,23 +9,21 @@ module.exports = function (folder, suffix = '') {
       const indexOf = fileNames.indexOf('index.js')
       if (indexOf >= 0) fileNames.splice(indexOf, 1)
       const WriteWebpackIndex = () => {
-        const strImport = fileNames
-          .map(f => `import ${converBigHump(f, suffix)} from './${f}'\n`)
-          .join('')
-        const strExport = fileNames
-          .map(f => `\n${sp(1)}${converBigHump(f, suffix)}`)
-          .join(',')
+        const strImport = fileNames.map(f => `import ${ConverBigHump(f, suffix)} from './${f}'\n`).join('')
+        const strExport = fileNames.map(f => `\n${ConverBigHump(f, suffix)}`).join(',')
         return `${strImport}\nexport {${strExport}\n}\n`
       }
       const output = path.resolve.apply(path, folder)
-      fs.writeFile(path.resolve(output, 'index.js'), WriteWebpackIndex()).then(
-        () => {
-          console.log(
-            'Update '.green + folder.join('\\').blue + ' index success.'.green
-          )
-          resolve()
-        }
-      )
+      const writeString = prettier.format(WriteWebpackIndex(), {
+        semi: false,
+        singleQuote: true,
+        arrowParens: 'avoid',
+        parser: 'babel',
+      })
+      fs.writeFile(path.resolve(output, 'index.js'), writeString).then(() => {
+        console.log('Update '.green + folder.join('\\').blue + ' index success.'.green)
+        resolve()
+      })
     })
   })
 }
