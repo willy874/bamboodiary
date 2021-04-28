@@ -6,7 +6,7 @@ module.exports = function (ops) {
     Object.keys(ops.schema).map(async modelName => {
       const { output, root } = ops
       const DB_TYPE = ops.type || 'json'
-      const { ConverDashFilename } = ops.methods
+      const { FileName } = ops.methods
       const compilerPlugin = (() => {
         switch (DB_TYPE) {
           case 'csv':
@@ -17,7 +17,8 @@ module.exports = function (ops) {
             return require('../plugins/database-json')
         }
       })()
-      const filename = ConverDashFilename(modelName, DB_TYPE)
+      const fn = new FileName(modelName)
+      const filename = fn.data.join('-').toLowerCase() + '.' + DB_TYPE
       const writeString = compilerPlugin(ops, modelName)
       const folders = await fs.readdir(path.join(root, output.database))
       if (!folders.includes(filename)) {

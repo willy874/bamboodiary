@@ -6,12 +6,17 @@ const postcss = require('rollup-plugin-postcss')
 const cleaner = require('rollup-plugin-cleaner')
 const commonjs = require('rollup-plugin-commonjs')
 const loaderJson = require('@rollup/plugin-json')
-const rootPage = process.env.Root
+const path = require('path')
+const root = process.env.ROOT || path.join(__dirname, '..', '..')
 
 async function build(input = {}, output = {}) {
   // dirname & filename 合併
-  if (output.dirname && output.filename) {
-    output.file = output.dirname + output.filename + '.js'
+  if (output.filename) {
+    if (output.dirname) {
+      output.file = output.dirname + output.filename + '.js'
+    } else {
+      output.file = 'rollup-bundle/dist/' + output.filename + '.bundle.js'
+    }
   }
   // 建構輸出設定
   const outputOption = Object.assign(
@@ -56,17 +61,38 @@ async function build(input = {}, output = {}) {
 }
 
 function buildFunction() {
-  const input = `${rootPage}/plugins/function/index.js`
-  const external = ['dayjs', 'uuid/v4', 'lodash']
-  console.log('Rollup bundle '.green + 'input'.yellow + ' is '.green + input.blue)
+  const bundleName = 'function'
+  const input = `${root}/plugins/function/index.js`
+  const external = ['dayjs', 'uuid', 'lodash']
+  console.log('Rollup bundle '.green + 'input'.yellow + ' as '.green + bundleName.yellow + ' ' + input.blue)
   return Promise.all([
-    build({ input, external }),
-    build({ input, external }, { format: 'cjs', dirname: `${rootPage}/app/function/`, filename: 'index' }),
-    build({ input, external }, { format: 'cjs', dirname: `${rootPage}/auto/function/`, filename: 'index' }),
-    build({ input, external }, { dirname: `${rootPage}/backend/src/library/function/`, filename: 'index' }),
+    build({ input, external }, { filename: 'function' }),
+    build({ input, external }, { format: 'cjs', dirname: `${root}/app/function/`, filename: 'index' }),
+    build({ input, external }, { format: 'cjs', dirname: `${root}/auto/function/`, filename: 'index' }),
+    build({ input, external }, { dirname: `${root}/backend/src/library/function/`, filename: 'index' }),
+  ])
+}
+function buildIcon() {
+  const bundleName = 'icon'
+  const input = `${root}/plugins/icon/index.js`
+  const external = ['vue']
+  console.log('Rollup bundle '.green + 'input'.yellow + ' as '.green + bundleName.yellow + ' ' + input.blue)
+  return Promise.all([
+    build({ input, external }, { filename: bundleName }),
+    build({ input, external }, { dirname: `${root}/backend/src/plugins/icon/`, filename: 'index' }),
+  ])
+}
+function buildDialog() {
+  const bundleName = 'dialog'
+  const input = `${root}/plugins/dialog/index.js`
+  const external = ['vue', 'classnames', 'uuid']
+  console.log('Rollup bundle '.green + 'input'.yellow + ' as '.green + bundleName.yellow + ' ' + input.blue)
+  return Promise.all([
+    build({ input, external }, { filename: bundleName }),
+    build({ input, external }, { dirname: `${root}/backend/src/plugins/dialog/`, filename: 'index' }),
   ])
 }
 
-Promise.all([buildFunction()]).then(() => {
+Promise.all([buildFunction(), buildIcon(), buildDialog()]).then(() => {
   console.log('Rollup build success'.green)
 })

@@ -1,8 +1,7 @@
 const path = require('path')
 const prettier = require('prettier')
 const fs = require('fs').promises
-const { ConverBigHump } = require('../function')
-
+const { FileName } = require('../function')
 module.exports = function (folder, suffix = '') {
   return new Promise(resolve => {
     fs.readdir(path.resolve.apply(path, folder)).then(fileNames => {
@@ -11,7 +10,7 @@ module.exports = function (folder, suffix = '') {
       const WriteNodejsIndex = () => {
         const strExport = fileNames
           .filter(f => /\.js$/.test(f))
-          .map(f => `\n${ConverBigHump(f, suffix)}: require('./${f}')`)
+          .map(f => `\n${new FileName(f).ConverBigHump() + suffix}: require('./${f}')`)
           .join(',')
         return `module.exports = {${strExport}\n}\n`
       }

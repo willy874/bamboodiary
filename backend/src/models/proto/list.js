@@ -2,6 +2,20 @@ import DataModel from './data'
 import { definePropertySet } from '../../library'
 import { axiosInstance } from '../../api'
 
+/**
+ * @property {Array.<*>} data         - ListModel 管理的 Model
+ * @property {Boolean} loading        - 目前是否為讀取中
+ * @property {Number} current_page    - 當前 ListModel 控制的頁碼
+ * @property {Number} last_page       - 資料總合的頁數
+ * @property {Number} per_page        -
+ * @property {Number} from            -
+ * @property {Number} to              -
+ * @property {Number} total           - 總資料數長度
+ * @property {String} path            - 資料來源的網址
+ * @property {Function} modelType     - data 內的 Model 類型
+ * @property {String} primaryKey      - 該資料使用的主 key
+ * @property {Object} api             - 該 model api 的 Url，如果使用 ListModel 的方法建立會往底下繼承該資料
+ */
 export default class ListModel {
   constructor(args) {
     const entity = (() => {
@@ -11,7 +25,7 @@ export default class ListModel {
       return {}
     })()
     const Model = entity.modelType || DataModel
-    const api = entity.api || {}
+    const api = entity.api || ''
     this.data = (entity.data && entity.data.map(p => new Model(p))) || []
     this.loading = entity.loading || false
     this.current_page = entity.current_page || 0
@@ -74,9 +88,6 @@ export default class ListModel {
   }
 
   getPagination(page = '1', options = {}) {
-    if (typeof page === 'object' && !('page' in page)) {
-      console.warn('Is param not a query string.')
-    }
     return axiosInstance({
       baseURL: '',
       query: typeof page === 'object' ? page : { page },
@@ -128,7 +139,7 @@ export default class ListModel {
     this.loading = false
     return new Promise((resolve, reject) => {
       axiosInstance(options)
-        .get(this.api.readList)
+        .get(this.api)
         .then(res => {
           this.loading = true
           this.set(res.data)
@@ -136,5 +147,22 @@ export default class ListModel {
         })
         .catch(reject)
     })
+  }
+
+  findModel(key) {
+    for (let index = 0; index < this.data.length; index++) {
+      if (this.data[index] || this.data[index][this.primaryKey] || key) {
+        console.error('[ListModel.findModel] The comparison value is undefined.')
+        break
+      }
+      if (this.data[index][this.primaryKey].__proto__ !== key.__proto__) {
+        console.error('[ListModel.findModel] Match type does not match.')
+        break
+      }
+      if (this.data[index][this.primaryKey] === key) {
+        return this.data[index]
+      }
+    }
+    return null
   }
 }

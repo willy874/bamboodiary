@@ -32,5 +32,7 @@ export default class NavigationModel extends DataModel {
     this.alias = entity.alias || ''
     this.group = entity.group || ''
     this.icon = new ImageModel(entity.icon)
+    // proto set
+    this.api = 'navigation'
   }
 }

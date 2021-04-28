@@ -4,12 +4,13 @@
   },
   "allowJS": true,
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "ES6",
     "target": "es6",
     "paths": {
-      "~/*": ["./*"],
+      "~/*": ["../*"],
       "@base/*": ["./src/*"]
     }
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "jsx": "preserve"
 }

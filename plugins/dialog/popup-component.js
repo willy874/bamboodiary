@@ -1,7 +1,7 @@
 import { h, onMounted, onUpdated, ref } from 'vue'
 import cx from 'classnames'
 import Popup from './popup'
-import { useDialog } from './index'
+import { useDialog } from './use'
 
 export default {
   props: {
@@ -37,9 +37,7 @@ export default {
           if (top === 'top') {
             return correctionValue + 'px'
           } else if (top === 'center') {
-            return (
-              (window.innerHeight - popupItem.value.offsetHeight) / 2 + 'px'
-            )
+            return (window.innerHeight - popupItem.value.offsetHeight) / 2 + 'px'
           } else if (top === 'bottom') {
             return window.innerHeight - correctionValue + 'px'
           }
@@ -112,9 +110,7 @@ export default {
               dialog.dropOffsetY = e.pageY - popupItem.value.offsetTop
             },
             touch: event => {
-              const e = Array.apply([], event.touches).find(
-                p => p.target === event.target
-              )
+              const e = Array.apply([], event.touches).find(p => p.target === event.target)
               dialog.dropTarget = popupItem
               dialog.dropOffsetX = e.pageX - popupItem.value.offsetLeft
               dialog.dropOffsetY = e.pageY - popupItem.value.offsetTop

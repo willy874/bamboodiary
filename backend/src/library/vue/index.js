@@ -20,10 +20,7 @@ function compileSelector(selector) {
       else if (type === '.') classes.push(value)
       else if (match[3][0] === '[') {
         let attrValue = match[6]
-        if (attrValue)
-          attrValue = attrValue
-            .replace(/\\(["'])/g, '$1')
-            .replace(/\\\\/g, '\\')
+        if (attrValue) attrValue = attrValue.replace(/\\(["'])/g, '$1').replace(/\\\\/g, '\\')
         if (match[4] === 'class') classes.push(attrValue)
         else attrs[match[4]] = attrValue === '' ? attrValue : attrValue || true
       }
@@ -178,10 +175,7 @@ class VirtualDom {
     if (typeof tag === 'string') {
       const selector = compileSelector(tag)
       this.tag = selector.tag
-      const classes = classNames(
-        selector.attrs.className || '',
-        attrs.class || ''
-      )
+      const classes = classNames(selector.attrs.className || '', attrs.class || '')
       if (classes) this.attrs.class = classes
       delete selector.attrs.className
       delete attrs.class
@@ -189,11 +183,7 @@ class VirtualDom {
       attrsCache.param = attrs.attrs
       delete attrs.attrs
       attrsCache.attrs = attrs
-      const objAttr = Object.assign(
-        attrsCache.selector,
-        attrsCache.param,
-        attrsCache.attrs
-      )
+      const objAttr = Object.assign(attrsCache.selector, attrsCache.param, attrsCache.attrs)
       if (Object.keys(objAttr).length) {
         this.attrs.attrs = objAttr
       }

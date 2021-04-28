@@ -1,9 +1,10 @@
-const root = process.env.ROOT
+const path = require('path')
+const root = process.env.ROOT || path.join(__dirname, '..', '..')
 
 module.exports = {
   root,
-  inputFolder: [root, 'auto', 'svg', 'assets'],
-  outputFolder: [root, 'auto', 'svg', 'pattern'],
+  inputFolder: [root, 'plugins', 'icon', 'assets'],
+  outputFolder: [root, 'plugins', 'icon', 'pattern'],
   svgRules: {
     allows: ['xmlns', 'xlink', 'viewBox'],
     attrs: {

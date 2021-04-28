@@ -2,12 +2,7 @@
   "name": "bamboodiary",
   "version": "0.0.0",
   "scripts": {
-    "app": "node app",
-    "index": "node auto/create-index",
-    "model": "node auto/model",
-    "svg": "node auto/svg",
-    "format": "prettier --write \"src/**/*.{js,vue,scss}\"",
-    "plugin": "rollup -c"
+    "app": "node index"
   },
   "dependencies": {
     "autoprefixer": "^10.2.5",

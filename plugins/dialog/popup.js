@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
-import { useDialog } from './index'
+// import { useDialog } from './use'
 
 /**
  * @property {Number} id
@@ -33,16 +33,16 @@ export default class Popup {
     )
   }
 
-  open(options) {
-    const dialog = useDialog()
-    Object.keys(options).forEach(key => {
-      this[key] = options[key]
-    })
-    dialog.popup(this)
-  }
+  // open(options) {
+  //   const dialog = useDialog()
+  //   Object.keys(options).forEach(key => {
+  //     this[key] = options[key]
+  //   })
+  //   dialog.popup(this)
+  // }
 
-  close() {
-    const dialog = useDialog()
-    dialog.closePopup(this.id)
-  }
+  // close() {
+  //   const dialog = useDialog()
+  //   dialog.closePopup(this.id)
+  // }
 }

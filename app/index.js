@@ -1,27 +1,30 @@
-require("colors");
-require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
-const path = require("path");
-const cookieParser = require("cookie-parser");
-const app = express();
-const createRoute = require("./router");
-const root = process.env.ROOT;
+require('colors')
+require('dotenv').config()
+const path = require('path')
+const express = require('express')
+const cors = require('cors')
+const cookieParser = require('cookie-parser')
+const app = express()
+const createRoute = require('./router/index')
+const root = process.env.ROOT || path.join(__dirname, '..', '..')
+const baseUrl = process.env.BASE_URL
+const publicUrl = process.env.PUBLIC_URL
+const port = process.env.PORT
 
 app
   .use(cors())
   .use(cookieParser())
-  .use(express.static(path.join(root, process.env.PUBLIC_URL)));
-
+  .use(express.static(path.join(root, publicUrl)))
+app.root = root
 const Route = createRoute({
   app,
-  listen: app.listen(process.env.VITE_API_PORT, () => {
+  listen: app.listen(port, () => {
     // listen callback.
   }),
   database: {},
   webSocket: {
     // onConnection
   },
-});
-console.log(`${process.env.VITE_BASE_URL}:${process.env.VITE_API_PORT}`.blue);
-module.exports = Route;
+})
+console.log(`${baseUrl}:${port}`.blue)
+module.exports = Route

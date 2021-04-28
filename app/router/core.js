@@ -17,28 +17,29 @@ module.exports = class Route {
         ...entity.webSocket,
         client: [],
         server: new SocketServer({
-          server: this.listen
+          server: this.listen,
         }),
-        connection: new Promise((resolve) => {
-          resolve(new Function)
+        connection: new Promise(resolve => {
+          resolve(new Function())
         }),
       }
-      this.webSocket.server.on('connection', (ws) => {
+      this.webSocket.server.on('connection', ws => {
         this.webSocket.client.push(ws)
-        this.webSocket.connection.then((callback) => {
+        this.webSocket.connection.then(callback => {
           callback({
             ...entity,
-            client: ws
+            client: ws,
           })
         })
       })
     }
-    if (entity.onCreate) entity.onCreate({
-      ...entity
-    })
+    if (entity.onCreate)
+      entity.onCreate({
+        ...entity,
+      })
   }
   handleCallback(data) {
-    const handle = (callback) => {
+    const handle = callback => {
       if (typeof callback === 'function') {
         return callback
       } else if (typeof callback === 'string' && /@/.test(callback)) {
@@ -77,7 +78,7 @@ module.exports = class Route {
         }
       })
     } else {
-      console.log('Is webSocket not dified.'.red);
+      console.log('Is webSocket not dified.'.red)
     }
   }
   getFunctionName(callback) {
@@ -97,7 +98,7 @@ module.exports = class Route {
     this.apiData.push({
       method,
       url,
-      name: this.getFunctionName(callback)
+      name: this.getFunctionName(callback),
     })
     this.app[method]('/api' + url, this.handleCallback(callback))
   }

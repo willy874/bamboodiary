@@ -1,19 +1,19 @@
 <template>
   <div id="layout">
-    <img src="@base/assets/image/logo.png" />
-    <HelloWorld />
+    <Layout />
     <Dialog />
   </div>
 </template>
 
 <script>
-/**
- * <router-view />
- * <Dialog />
- */
-import HelloWorld from '@base/components/HelloWorld.vue'
+import Layout from '@base/layout/bsdctw/Index.vue'
 export default {
-  components: { HelloWorld },
+  created() {
+    window.addEventListener('resize', () => {
+      this.$store.commit('setWindowInnerWidth')
+    })
+  },
+  components: { Layout },
 }
 </script>
 

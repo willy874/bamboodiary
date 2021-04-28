@@ -25,5 +25,7 @@ export default class ImageModel extends DataModel {
     this.alt = entity.alt || ''
     this.title = entity.title || ''
     this.json = entity.json || ''
+    // proto set
+    this.api = 'image'
   }
 }

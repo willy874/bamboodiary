@@ -10,14 +10,9 @@ import '../validate'
  * @property {String} updated_at     - 該筆資料最後編輯時間 YYYY/MM/DD HH:MM:ss
  * @property {String} deleted_at     - 該筆資料刪除時間 YYYY/MM/DD HH:MM:ss
  * @property {Object} errors         - 目前產生的錯誤訊息
- * @property {String} loading        - 目前是否為讀取中
+ * @property {Boolean} loading       - 目前是否為讀取中
  * @property {String} mode           - ["static","edit","delete"]
- * @property {String} api.readData   - 該 api 的 get 方法 Url
- * @property {String} api.createData - 該 api 的 post 方法 Url
- * @property {String} api.updateData - 該 api 的 put 方法 Url
- * @property {String} api.patchData  - 該 api 的 patch 方法 Url
- * @property {String} api.deleteData - 該 api 的 delete 方法 Url
- * @pototype hasError
+ * @property {String} api            - 該 model api 的 Url
  */
 export default class DataModel {
   /** @param {*} args 若為 JSON 字串則會經過轉型 */
@@ -28,6 +23,7 @@ export default class DataModel {
       }
       return {}
     })()
+    const api = entity.api || ''
     this.id = entity.id || 0
     this.created_at = entity.created_at || undefined
     this.updated_at = entity.updated_at || undefined
@@ -42,7 +38,7 @@ export default class DataModel {
         entity,
         edited: entity.edited || false,
         deleted: entity.deleted || false,
-        api: entity.api || {},
+        api,
         primaryKey: entity.primaryKey || 'id',
         dayFormat: entity.dayFormat || 'YYYY/MM/DD HH:mm:ss',
       },
@@ -108,7 +104,7 @@ export default class DataModel {
     this.loading = true
     return new Promise((resolve, reject) => {
       axiosInstance(options)
-        .get(`${this.api.readData}/${this[this.primaryKey]}`)
+        .get(`${this.api}/${this[this.primaryKey]}`)
         .then(res => {
           this.loading = false
           this.set(res.data)
@@ -122,7 +118,7 @@ export default class DataModel {
     this.loading = true
     return new Promise((resolve, reject) => {
       axiosInstance(options)
-        .get(`${this.api.createData}/${this[this.primaryKey]}`, this)
+        .post(`${this.api}/${this[this.primaryKey]}`, this)
         .then(res => {
           this.loading = false
           this.set(res.data)
@@ -137,7 +133,7 @@ export default class DataModel {
     this.loading = true
     return new Promise((resolve, reject) => {
       axiosInstance(options)
-        .get(`${this.api.updateData}/${this[this.primaryKey]}`, this)
+        .put(`${this.api}/${this[this.primaryKey]}`, this)
         .then(res => {
           this.loading = false
           this.updated_at = dayjs().format(this.dayFormat)
@@ -151,7 +147,7 @@ export default class DataModel {
     this.loading = true
     return new Promise((resolve, reject) => {
       axiosInstance(options)
-        .get(`${this.api.deleteData}/${this[this.primaryKey]}`, this)
+        .delete(`${this.api}/${this[this.primaryKey]}`, this)
         .then(res => {
           this.loading = false
           this.deleted_at = dayjs().format(this.dayFormat)

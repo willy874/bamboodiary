@@ -25,5 +25,7 @@ export default class ArticleModel extends DataModel {
     this.deleted_user = entity.deleted_user || ''
     this.published_at = entity.published_at || ''
     this.finished_at = entity.finished_at || ''
+    // proto set
+    this.api = 'article'
   }
 }

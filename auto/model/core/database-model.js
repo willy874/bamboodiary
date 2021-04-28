@@ -7,8 +7,9 @@ module.exports = function (ops) {
   return Promise.all([
     Object.keys(ops.schema).map(async modelName => {
       const { output, root, overwrite } = ops
-      const { ConverDashFilename } = ops.methods
-      const filename = ConverDashFilename(modelName, 'js')
+      const { FileName } = ops.methods
+      const fn = new FileName(modelName)
+      const filename = fn.data.join('-') + '.js'
       const writeString = prettier.format(compilerPlugin(ops, modelName), {
         semi: false,
         singleQuote: true,

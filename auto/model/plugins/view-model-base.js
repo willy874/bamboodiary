@@ -2,14 +2,15 @@ const _uniq = require('lodash/uniq')
 const _concat = require('lodash/concat')
 
 module.exports = function (ops, modelName) {
-  // const { ConverDashFilename, Spaces } = ops.methods
-  // const sp = Spaces
   const model = ops.schema[modelName]
+  const { FileName } = ops.methods
   const isModel = type => typeof type === 'string' && /Model$/.test(type)
+  // 繼承模組
   const importExtendsModel =
     model.extends === 'DataModel'
       ? `import DataModel from '../proto/data'\n`
       : `import { ${model.extends} } from './index'\n`
+  // 依賴模組
   const importModule = (() => {
     const arr = []
 
@@ -66,11 +67,9 @@ module.exports = function (ops, modelName) {
     `constructor(){\n` +
     `super()\n` +
     `const entity = args || {}\n` +
-    model.tebles
-      .map(table => {
-        return `this.${table.name} = ${tableValueTable(table)}\n`
-      })
-      .join('') +
+    model.tebles.map(table => `this.${table.name} = ${tableValueTable(table)}\n`).join('') +
+    '// proto set\n' +
+    `this.api = '${new FileName(modelName).data.join('-')}'\n` +
     `}\n` +
     '}\n'
   )

@@ -7,7 +7,11 @@
     "doc": "doc"
   },
   "scripts": {
-    "auto": "node auto/index"
+    "index": "cd auto & node create-index",
+    "model": "cd auto & node model",
+    "svg": "cd auto & node svg",
+    "plugin": "cd auto & node rollup-bundle",
+    "app": "cd app & node index"
   },
   "repository": {
     "type": "git",
